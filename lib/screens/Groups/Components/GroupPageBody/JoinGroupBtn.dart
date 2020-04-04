@@ -7,13 +7,17 @@ class _BottomSheetContent extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 70,
-            padding: EdgeInsets.all(10.0),
+            height: 90,
+            padding: EdgeInsets.only(
+                top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
             child: Center(
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  labelText: 'Search group to join',
+                  labelText: 'Search group to join group',
+                  counterText: "",
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                 ),
               ),
             ),
