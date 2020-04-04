@@ -7,9 +7,15 @@ class _BottomSheetContent extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 50,
+            height: 70,
+            padding: EdgeInsets.all(10.0),
             child: Center(
-              child: Text('qwerty'),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Search group to join',
+                ),
+              ),
             ),
           ),
           Divider(thickness: 1),
@@ -17,8 +23,23 @@ class _BottomSheetContent extends StatelessWidget {
             child: ListView.builder(
               itemCount: 10,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text('qwerty'),
+                return Container(
+                  padding: EdgeInsets.only(
+                      top: 10.0, bottom: 5.0, left: 15.0, right: 15.0),
+                  child: Card(
+                    child: ListTile(
+                      leading: FlutterLogo(size: 72.0),
+                      title: Text(
+                        'Three-line ListTile',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                      ),
+                      subtitle: Text(
+                          'A sufficiently long subtitle warrants three lines.'),
+                      trailing: Icon(Icons.more_vert),
+                      isThreeLine: true,
+                    ),
+                  ),
                 );
               },
             ),
