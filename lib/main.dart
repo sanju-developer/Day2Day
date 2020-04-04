@@ -7,7 +7,7 @@ import 'package:day2day/screens/EntryPage/EntryPage.dart';
 void main() {
   runApp(MaterialApp(
     theme: Theme.customThemeData,
-    // home: EntryPage(),
-    home: GroupsPage(),
+    home: EntryPage(),
+    // home: GroupsPage(),
   ));
 }
