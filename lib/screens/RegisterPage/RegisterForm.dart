@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class RegisterForm extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return RegisterFormState();
+    return _RegisterFormState();
   }
 }
 
-class RegisterFormState extends State<RegisterForm> {
+class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
   final phoneController = TextEditingController();
   bool showLoader = false;
