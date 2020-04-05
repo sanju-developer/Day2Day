@@ -1,5 +1,5 @@
 import 'package:day2day/Widgets/SizeRoute/SizeRoute.dart';
-import 'package:day2day/screens/NotificationPage/NotificationPage.dart';
+import 'package:day2day/screens/Notification_Page/Notification_Page.dart';
 
 import 'package:flutter/material.dart';
 

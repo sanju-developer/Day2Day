@@ -1,6 +1,6 @@
-import 'package:day2day/screens/RegisterPage/RegisterPage.dart';
-import 'package:day2day/screens/EntryPage/Introduction.dart';
-import 'package:day2day/screens/LoginPage/LoginPage.dart';
+import 'package:day2day/screens/Register_Page/Register_Page.dart';
+import 'package:day2day/screens/Entry_Page/Introduction.dart';
+import 'package:day2day/screens/Login_Page/Login_Page.dart';
 
 import 'package:flutter/material.dart';
 
