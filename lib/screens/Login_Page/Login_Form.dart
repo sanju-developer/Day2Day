@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 class LoginForm extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return LoginFormState();
+    return _LoginFormState();
   }
 }
 
-class LoginFormState extends State<LoginForm> {
+class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
   String password = '';
   bool lockIcon = false;

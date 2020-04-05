@@ -1,6 +1,6 @@
-import 'package:day2day/Components/drawer/drawer.dart';
+import 'package:day2day/Widgets/drawer/drawer.dart';
 import 'package:day2day/screens/Groups/Groups.dart';
-import 'screens/Groups/Groups.dart';
+// import 'package:day2day/screens/Entry_Page/Entry_Page.dart';
 
 import 'package:flutter/material.dart';
 import 'theme.dart' as Theme;
@@ -12,6 +12,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Widget child = EntryPage();
     Widget child = GroupsPage();
     Widget home = AnimatedDrawer(
       child: child,
