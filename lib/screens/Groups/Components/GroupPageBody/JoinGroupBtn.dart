@@ -31,6 +31,7 @@ class _BottomSheetContent extends StatelessWidget {
                   padding: EdgeInsets.only(
                       top: 10.0, bottom: 5.0, left: 15.0, right: 15.0),
                   child: Card(
+                    elevation: 8.0,
                     child: ListTile(
                       leading: FlutterLogo(size: 72.0),
                       title: Text(
@@ -40,7 +41,10 @@ class _BottomSheetContent extends StatelessWidget {
                       ),
                       subtitle: Text(
                           'A sufficiently long subtitle warrants three lines.'),
-                      trailing: Icon(Icons.more_vert),
+                      trailing: Icon(
+                        Icons.verified_user,
+                        color: Theme.of(context).primaryColor,
+                      ),
                       isThreeLine: true,
                     ),
                   ),
