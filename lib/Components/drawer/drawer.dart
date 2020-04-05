@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../assets/colors/colors.dart';
+import '../../screens/ProfilePage/ProfilePage.dart';
 
 class AnimatedDrawer extends StatefulWidget {
   final Widget child;
@@ -152,6 +153,10 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Profile"),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.help),
