@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
+enum WhyFarther { yourGroups, profile, notification, help }
 
 class AppMenu extends StatelessWidget {
   @override
@@ -9,21 +9,56 @@ class AppMenu extends StatelessWidget {
       elevation: 10.0,
       onSelected: (WhyFarther result) {},
       itemBuilder: (BuildContext context) => <PopupMenuEntry<WhyFarther>>[
-        const PopupMenuItem<WhyFarther>(
-          value: WhyFarther.harder,
-          child: Text('Working a lot harder'),
+        PopupMenuItem<WhyFarther>(
+          value: WhyFarther.yourGroups,
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.assignment),
+              Container(
+                padding: EdgeInsets.only(left: 8.0),
+                child: Text('Your Groups'),
+              )
+            ],
+          ),
         ),
-        const PopupMenuItem<WhyFarther>(
-          value: WhyFarther.smarter,
-          child: Text('Being a lot smarter'),
+        PopupMenuDivider(),
+        PopupMenuItem<WhyFarther>(
+          value: WhyFarther.profile,
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.person),
+              Container(
+                padding: EdgeInsets.only(left: 8.0),
+                child: Text('Profile'),
+              )
+            ],
+          ),
         ),
-        const PopupMenuItem<WhyFarther>(
-          value: WhyFarther.selfStarter,
-          child: Text('Being a self-starter'),
+        PopupMenuDivider(),
+        PopupMenuItem<WhyFarther>(
+          value: WhyFarther.notification,
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.notifications),
+              Container(
+                padding: EdgeInsets.only(left: 8.0),
+                child: Text('Profile'),
+              )
+            ],
+          ),
         ),
-        const PopupMenuItem<WhyFarther>(
-          value: WhyFarther.tradingCharter,
-          child: Text('Placed in charge of trading charter'),
+        PopupMenuDivider(),
+        PopupMenuItem<WhyFarther>(
+          value: WhyFarther.help,
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.help),
+              Container(
+                padding: EdgeInsets.only(left: 8.0),
+                child: Text('Help'),
+              )
+            ],
+          ),
         ),
       ],
     );

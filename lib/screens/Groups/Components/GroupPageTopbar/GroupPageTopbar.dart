@@ -6,18 +6,18 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        centerTitle: false,
         backgroundColor: Colors.white,
         title: Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Column(
                     children: <Widget>[
                       Icon(
-                        Icons.person,
+                        Icons.account_circle,
                         size: 35.0,
                         color: Theme.of(context).primaryColor,
                       ),
