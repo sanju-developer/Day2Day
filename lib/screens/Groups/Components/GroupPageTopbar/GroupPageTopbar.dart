@@ -1,3 +1,7 @@
+import 'package:day2day/Components/_SizeRoute/_SizeRoute.dart';
+import 'package:day2day/screens/NotificationPage/NotificationPage.dart';
+import 'package:day2day/screens/ProfilePage/ProfilePage.dart';
+
 import 'package:flutter/material.dart';
 
 class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
@@ -16,17 +20,26 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
                 children: <Widget>[
                   Column(
                     children: <Widget>[
-                      Icon(
-                        Icons.account_circle,
-                        size: 35.0,
+                      IconButton(
+                        icon: Icon(
+                          Icons.account_circle,
+                          size: 35.0,
+                        ),
                         color: Theme.of(context).primaryColor,
+                        tooltip: 'Profile',
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfilePage()));
+                        },
                       ),
                     ],
                   ),
                   Column(
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.only(left: 8.0),
+                        padding: EdgeInsets.only(top: 10.0),
                         child: Text('Vivek Rajoriya',
                             style: Theme.of(context).textTheme.title),
                       )
@@ -36,10 +49,17 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
               ),
               Column(
                 children: <Widget>[
-                  Icon(
-                    Icons.notifications,
-                    size: 35.0,
+                  IconButton(
+                    icon: Icon(
+                      Icons.notifications,
+                      size: 35.0,
+                    ),
                     color: Theme.of(context).primaryColor,
+                    tooltip: 'Notification',
+                    onPressed: () {
+                      Navigator.push(
+                          context, SizeRoute(page: NotificationPage()));
+                    },
                   ),
                 ],
               )

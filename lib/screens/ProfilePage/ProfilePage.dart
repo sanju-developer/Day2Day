@@ -19,18 +19,19 @@ class ProfilePageState extends State<ProfilePage> {
             expandedHeight: 250.0,
             backgroundColor: Color.fromRGBO(247, 246, 243, 1.0),
             flexibleSpace: FlexibleSpaceBar(
-                title: Text('Vivek Rajoriya',
-                    style: TextStyle(color: Theme.of(context).primaryColor)),
-                // background: Image.network(
-                //   'https://i.stack.imgur.com/UGgWD.png',
-                //   fit: BoxFit.cover,
-                // ),
-                background: Image.asset(
-                  'lib/assets/images/profilePic.svg',
-                  fit: BoxFit.cover,
-                  width: 200,
-                  height: 200,
-                ))),
+              title: Text('Vivek Rajoriya',
+                  style: TextStyle(color: Theme.of(context).primaryColor)),
+              // background: Image.network(
+              //   'https://i.stack.imgur.com/UGgWD.png',
+              //   fit: BoxFit.cover,
+              // ),
+              // background: Image.asset(
+              //   'lib/assets/images/profilePic.svg',
+              //   fit: BoxFit.cover,
+              //   width: 200,
+              //   height: 200,
+              // )
+            )),
         SliverFixedExtentList(
           itemExtent: 50.0,
           delegate: SliverChildBuilderDelegate(
