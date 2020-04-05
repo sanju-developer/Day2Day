@@ -8,6 +8,7 @@ final ThemeData customThemeData = ThemeData(
   primaryColor: LightThemeColors.myCustomDarkBlueColor,
   primaryColorLight: LightThemeColors.myCustomLightBlueColor,
   accentColor: LightThemeColors.myCustomGreenColor,
+  buttonColor: LightThemeColors.myCustomLYellowColor,
 
   // Define the default font family.
   fontFamily: 'MartelSans',
