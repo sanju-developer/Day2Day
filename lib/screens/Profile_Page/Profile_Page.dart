@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:day2day/screens/profile_page/profile_bottom.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -9,42 +11,34 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: <Widget>[
-        SliverAppBar(
-            elevation: 8.0,
-            iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-            pinned: true,
-            floating: false,
-            expandedHeight: 250.0,
-            backgroundColor: Color.fromRGBO(247, 246, 243, 1.0),
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('Vivek Rajoriya',
-                  style: TextStyle(color: Theme.of(context).primaryColor)),
-              // background: Image.network(
-              //   'https://i.stack.imgur.com/UGgWD.png',
-              //   fit: BoxFit.cover,
-              // ),
-              // background: Image.asset(
-              //   'lib/assets/images/profilePic.svg',
-              //   fit: BoxFit.cover,
-              //   width: 200,
-              //   height: 200,
-              // )
-            )),
-        SliverFixedExtentList(
-          itemExtent: 50.0,
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return Container(
-                alignment: Alignment.center,
-                color: Color.fromRGBO(247, 246, 243, 1.0),
-                child: Text('List Item $index'),
-              );
-            },
-          ),
+    return Scaffold(
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+              expandedHeight: 200.0,
+              floating: false,
+              pinned: true,
+              flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: false,
+                  title: Text("Vivek Rajoriya",
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 20.0,
+                      )),
+                  background: Image.network(
+                    "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
+                    fit: BoxFit.cover,
+                  )),
+            ),
+          ];
+        },
+        body: Center(
+          child: Text("Sample Text"),
         ),
-      ],
+      ),
     );
   }
 }
