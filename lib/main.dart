@@ -1,6 +1,6 @@
-import 'package:day2day/Widgets/drawer/drawer.dart';
-import 'package:day2day/screens/Groups/Groups.dart';
-// import 'package:day2day/screens/Entry_Page/Entry_Page.dart';
+import 'package:day2day/widgets/drawer/drawer.dart';
+import 'package:day2day/screens/groups/groups.dart';
+// import 'package:day2day/screens/entry_page/entry_page.dart';
 
 import 'package:flutter/material.dart';
 import 'theme.dart' as Theme;

@@ -1,4 +1,4 @@
-import 'package:day2day/screens/profile_page/profile_bottom.dart';
+import 'package:day2day/screens/profile/profile_bottom.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter/material.dart';
@@ -36,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ];
         },
         body: Center(
-          child: Text("Sample Text"),
+          child: ProfileBottom(),
         ),
       ),
     );

@@ -1,6 +1,5 @@
-import 'package:day2day/screens/Groups/Group_Page_Widgets/Group_Page_Body/Join_Group_Btn.dart';
-import 'package:day2day/screens/Groups/Group_Page_Widgets/Group_Page_Topbar/Group_Page_Topbar.dart';
-
+import 'package:day2day/screens/groups/widgets/group_page_topbar.dart';
+import 'package:day2day/screens/groups/widgets/join_group_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
