@@ -1,4 +1,4 @@
-import 'package:day2day/screens/register/register_form.dart';
+import 'package:day2day/screens/register/widgets/register_form.dart';
 import 'package:flutter/material.dart';
 import 'package:day2day/screens/login/login.dart';
 

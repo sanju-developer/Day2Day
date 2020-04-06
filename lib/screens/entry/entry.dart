@@ -1,5 +1,5 @@
 import 'package:day2day/screens/register/register.dart';
-import 'package:day2day/screens/entry/introduction.dart';
+import 'package:day2day/screens/entry/widgets/introduction.dart';
 import 'package:day2day/screens/login/login.dart';
 
 import 'package:flutter/material.dart';
