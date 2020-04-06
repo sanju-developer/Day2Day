@@ -2,7 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'package:day2day/assets/colors/colors.dart';
-import 'package:day2day/screens/Profile_Page/Profile_Page.dart';
+import 'package:day2day/screens/profile_page/profile_page.dart';
 
 class AnimatedDrawer extends StatefulWidget {
   final Widget child;

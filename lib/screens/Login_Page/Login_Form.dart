@@ -1,4 +1,4 @@
-import 'package:day2day/screens/Groups/Groups.dart';
+import 'package:day2day/screens/groups/groups.dart';
 
 import 'package:flutter/material.dart';
 

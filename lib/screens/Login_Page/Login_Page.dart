@@ -1,5 +1,5 @@
-import 'package:day2day/screens/Login_Page/Login_Form.dart';
-import 'package:day2day/screens/Register_Page/Register_Page.dart';
+import 'package:day2day/screens/login_page/login_form.dart';
+import 'package:day2day/screens/register_page/register_page.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
