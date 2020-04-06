@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:day2day/screens/Register_Page/Register_Form.dart';
-import 'package:day2day/screens/Login_Page/Login_Page.dart';
+import 'package:day2day/screens/register_page/register_form.dart';
+import 'package:day2day/screens/login_page/login_page.dart';
 
 class RegisterPage extends StatelessWidget {
   @override
