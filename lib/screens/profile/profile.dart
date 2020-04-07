@@ -12,33 +12,45 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-              expandedHeight: 200.0,
-              floating: false,
-              pinned: true,
-              flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: false,
-                  title: Text("Vivek Rajoriya",
-                      style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 20.0,
-                      )),
-                  background: Image.network(
-                    "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
-                    fit: BoxFit.cover,
-                  )),
-            ),
-          ];
-        },
-        body: Center(
-          child: ProfileBottom(),
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+          centerTitle: false,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          title: Text(
+            'Profile',
+            style: TextStyle(
+                color: Theme.of(context).primaryColor,
+                fontSize: 30.0,
+                fontWeight: FontWeight.w700),
+          ),
         ),
-      ),
-    );
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    CircleAvatar(
+                      foregroundColor: Theme.of(context).primaryColorLight,
+                      backgroundColor: Theme.of(context).primaryColor,
+                      radius: 30.0,
+                      child: SvgPicture.asset(
+                        'lib/assets/images/profilePic.svg',
+                        semanticsLabel: 'Acme Logo',
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
+                ProfileBottom()
+              ],
+            ),
+          ),
+        ));
   }
 }
