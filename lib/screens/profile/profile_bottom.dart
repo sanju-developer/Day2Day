@@ -12,20 +12,6 @@ class _ProfileBottomState extends State<ProfileBottom> {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              IconButton(
-                  onPressed: () => {},
-                  icon: Icon(
-                    Icons.edit,
-                    size: 20.0,
-                    color: Theme.of(context).primaryColor,
-                  )),
-            ],
-          ),
-        ),
-        Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -118,7 +104,7 @@ class _ProfileBottomState extends State<ProfileBottom> {
           ),
         ),
         Container(
-          padding: EdgeInsets.only(top: 30.0),
+          padding: EdgeInsets.only(top: 20.0),
           child: RaisedButton(
               padding: EdgeInsets.only(
                   top: 5.0, bottom: 5.0, left: 25.0, right: 20.0),

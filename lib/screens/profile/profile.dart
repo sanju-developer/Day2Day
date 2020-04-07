@@ -13,17 +13,31 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-          centerTitle: false,
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          title: Text(
-            'Profile',
-            style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontSize: 30.0,
-                fontWeight: FontWeight.w700),
-          ),
-        ),
+            iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+            centerTitle: false,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            title: Stack(
+              children: <Widget>[
+                Text(
+                  'Profile',
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.w700),
+                ),
+                Positioned(
+                  right: 0.0,
+                  top: 30.0,
+                  child: IconButton(
+                      onPressed: () => {},
+                      icon: Icon(
+                        Icons.edit,
+                        size: 30.0,
+                        color: Theme.of(context).primaryColor,
+                      )),
+                )
+              ],
+            )),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(30.0),
