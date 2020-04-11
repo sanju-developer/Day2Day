@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:day2day/screens/profile/profile_bottom.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -9,42 +11,60 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: <Widget>[
-        SliverAppBar(
-            elevation: 8.0,
+    return Scaffold(
+        appBar: AppBar(
             iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-            pinned: true,
-            floating: false,
-            expandedHeight: 250.0,
-            backgroundColor: Color.fromRGBO(247, 246, 243, 1.0),
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('Vivek Rajoriya',
-                  style: TextStyle(color: Theme.of(context).primaryColor)),
-              // background: Image.network(
-              //   'https://i.stack.imgur.com/UGgWD.png',
-              //   fit: BoxFit.cover,
-              // ),
-              // background: Image.asset(
-              //   'lib/assets/images/profilePic.svg',
-              //   fit: BoxFit.cover,
-              //   width: 200,
-              //   height: 200,
-              // )
+            centerTitle: false,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            title: Stack(
+              children: <Widget>[
+                Text(
+                  'Profile',
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.w700),
+                ),
+                Positioned(
+                  right: 0.0,
+                  top: 30.0,
+                  child: IconButton(
+                      onPressed: () => {},
+                      icon: Icon(
+                        Icons.edit,
+                        size: 30.0,
+                        color: Theme.of(context).primaryColor,
+                      )),
+                )
+              ],
             )),
-        SliverFixedExtentList(
-          itemExtent: 50.0,
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return Container(
-                alignment: Alignment.center,
-                color: Color.fromRGBO(247, 246, 243, 1.0),
-                child: Text('List Item $index'),
-              );
-            },
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    CircleAvatar(
+                      foregroundColor: Theme.of(context).primaryColorLight,
+                      backgroundColor: Theme.of(context).primaryColor,
+                      radius: 30.0,
+                      child: SvgPicture.asset(
+                        'lib/assets/images/profilePic.svg',
+                        semanticsLabel: 'Acme Logo',
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
+                ProfileBottom()
+              ],
+            ),
           ),
-        ),
-      ],
-    );
+        ));
   }
 }
