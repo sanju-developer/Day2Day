@@ -18,6 +18,7 @@ environment:
 
 dependencies:
   flutter_svg: ^0.17.1
+  pin_code_fields: ^2.5.1
   flutter:
     sdk: flutter
 
@@ -41,9 +42,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - lib/assets/
-   - lib/assets/images/
-   - lib/assets/images/login-background.png
+    - lib/assets/
+    - lib/assets/images/
+    - lib/assets/images/login-background.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -59,7 +60,7 @@ flutter:
   # example:
   fonts:
     - family: MartelSans
-      fonts: 
+      fonts:
         - asset: lib/assets/fonts/MartelSans-Regular.ttf
         - asset: lib/assets/fonts/MartelSans-Light.ttf
         - asset: lib/assets/fonts/MartelSans-Bold.ttf
