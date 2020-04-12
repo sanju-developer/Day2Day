@@ -120,48 +120,37 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                     )),
                   ),
                   Container(
-                      padding:
-                          EdgeInsets.only(top: 40.0, left: 25.0, right: 25.0),
-                      child: RaisedButton(
-                        onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    OTPVerificationPage('+91 999262312'))),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
+                    padding:
+                        EdgeInsets.only(top: 40.0, left: 25.0, right: 25.0),
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 16.0, horizontal: 30),
+                      child: ButtonTheme(
+                        height: 50,
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        OTPVerificationPage('+91 999262312')));
+                          },
+                          child: Center(
+                              child: Text(
+                            "Get OTP".toUpperCase(),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold),
+                          )),
                         ),
-                        elevation: 8.0,
+                      ),
+                      decoration: BoxDecoration(
                         color: Theme.of(context).buttonColor,
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              padding: EdgeInsets.only(
-                                  left: 25.0,
-                                  right: 5.0,
-                                  top: 8.0,
-                                  bottom: 5.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Text(
-                                    'GET OTP',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 22.0),
-                                  ),
-                                  Icon(
-                                    Icons.arrow_forward,
-                                    size: 28.0,
-                                    color: Colors.white,
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ))
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                  )
                 ],
               )),
         ));
