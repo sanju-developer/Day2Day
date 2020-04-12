@@ -85,6 +85,8 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                                     fontWeight: FontWeight.bold),
                               ),
                               TextFormField(
+                                style: TextStyle(letterSpacing: 5),
+                                textAlign: TextAlign.center,
                                 textAlignVertical: TextAlignVertical.center,
                                 controller: phoneController,
                                 keyboardType: TextInputType.phone,
