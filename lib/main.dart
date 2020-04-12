@@ -10,11 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget child = EntryPage();
-
-    return MaterialApp(
-      theme: Theme.customThemeData,
-      home: child,
-    );
+    return MaterialApp(theme: Theme.customThemeData, home: EntryPage());
   }
 }

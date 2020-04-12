@@ -14,7 +14,7 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
   bool isSignUpBtnClicked = false;
   String phone = '';
 
-  bool signUpBtnClicked() {
+  void signUpBtnClicked() {
     setState(() {
       isSignUpBtnClicked = true;
     });
@@ -110,7 +110,6 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                                       setState(() {
                                         phone = value;
                                       });
-                                      print(phone);
                                       print(_formKey);
                                       if (_formKey.currentState.validate()) {
                                         return null;

@@ -1,6 +1,3 @@
-import 'package:day2day/screens/register/register.dart';
-import 'package:day2day/screens/entry/widgets/introduction.dart';
-import 'package:day2day/screens/login/login.dart';
 import 'package:day2day/widgets/button/google_sign_up/google_sign_up.dart';
 import 'package:day2day/widgets/button/sign_up_with_phone/sign_up_with_phone_btn.dart';
 

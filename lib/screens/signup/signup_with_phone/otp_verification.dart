@@ -16,13 +16,14 @@ class OTPVerificationPage extends StatefulWidget {
 class _OTPVerificationPageState extends State<OTPVerificationPage> {
   var onTapRecognizer;
 
-  TextEditingController textEditingController = TextEditingController()
+  final TextEditingController textEditingController = TextEditingController()
     ..text = "";
 
   StreamController<ErrorAnimationType> errorController;
 
   bool hasError = false;
   String currentText = "";
+
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   void initState() {
@@ -88,11 +89,12 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                       text: "Enter the code sent to ",
                       children: [
                         TextSpan(
-                            text: widget.phoneNumber,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15)),
+                          text: widget.phoneNumber,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
                       ],
                       style: TextStyle(color: Colors.black54, fontSize: 15)),
                   textAlign: TextAlign.center,
@@ -124,9 +126,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                     autoFocus: true,
                     errorAnimationController: errorController,
                     controller: textEditingController,
-                    onCompleted: (v) {
-                      print("Completed:::::::::::::::::");
-                    },
+                    onCompleted: (v) {},
                     onChanged: (value) {
                       print(value);
                       setState(() {
@@ -151,12 +151,13 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                     style: TextStyle(color: Colors.black54, fontSize: 15),
                     children: [
                       TextSpan(
-                          text: " RESEND",
-                          recognizer: onTapRecognizer,
-                          style: TextStyle(
-                              color: Theme.of(context).accentColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16))
+                        text: " RESEND",
+                        recognizer: onTapRecognizer,
+                        style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      )
                     ]),
               ),
               SizedBox(
@@ -193,7 +194,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                     },
                     child: Center(
                         child: Text(
-                      "VERIFY".toUpperCase(),
+                      "VERIFY",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 22,

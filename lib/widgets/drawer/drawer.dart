@@ -85,7 +85,7 @@ class _AnimatedDrawerState extends State<AnimatedDrawer>
         animation: animationController,
         builder: (BuildContext context, _) {
           return Material(
-            color: LightThemeColors.myCustomLightGreyColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             child: Stack(
               children: <Widget>[
                 Transform.translate(
@@ -138,7 +138,7 @@ class MyDrawer extends StatelessWidget {
     return SizedBox(
       width: 300.0,
       child: Material(
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: ListView(
           children: <Widget>[
             DrawerHeader(
