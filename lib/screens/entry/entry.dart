@@ -4,6 +4,7 @@ import 'package:day2day/widgets/button/sign_up_with_phone/sign_up_with_phone_btn
 import 'package:flutter/material.dart';
 
 class EntryPage extends StatefulWidget {
+  static const String routeName = '/';
   @override
   State<StatefulWidget> createState() {
     return _EntryPageState();

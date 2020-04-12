@@ -6,7 +6,14 @@ import 'dart:async';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+class OTPVerificationPageArguments {
+  final String phoneNumber;
+
+  OTPVerificationPageArguments(this.phoneNumber);
+}
+
 class OTPVerificationPage extends StatefulWidget {
+  static const String routeName = '/otpVerification';
   final String phoneNumber;
   OTPVerificationPage(this.phoneNumber);
   @override

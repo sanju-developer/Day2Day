@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
+  static const String routeName = '/profile';
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }

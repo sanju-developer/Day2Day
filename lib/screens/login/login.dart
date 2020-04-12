@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  static const String routeName = '/login';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

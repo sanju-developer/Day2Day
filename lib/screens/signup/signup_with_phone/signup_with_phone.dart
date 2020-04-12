@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignupWithPhone extends StatefulWidget {
+  static const String routeName = '/signupPhone';
   @override
   _SignupWithPhoneState createState() => _SignupWithPhoneState();
 }
