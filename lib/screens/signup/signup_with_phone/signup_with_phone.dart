@@ -144,11 +144,12 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                           onPressed: () {
                             signUpBtnClicked();
                             if (_formKey.currentState.validate()) {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => OTPVerificationPage(
-                                          '+91 999262312')));
+                              Navigator.pushNamed(
+                                context,
+                                OTPVerificationPage.routeName,
+                                arguments:
+                                    OTPVerificationPageArguments(phone),
+                              );
                             }
                           },
                           child: Center(

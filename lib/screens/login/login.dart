@@ -36,10 +36,10 @@ class LoginPage extends StatelessWidget {
                         style: Theme.of(context).textTheme.body1,
                       ),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegisterPage()));
+                        Navigator.pushNamed(
+                          context,
+                          RegisterPage.routeName,
+                        );
                       },
                     )
                   ],

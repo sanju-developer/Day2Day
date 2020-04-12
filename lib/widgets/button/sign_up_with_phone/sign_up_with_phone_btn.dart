@@ -11,8 +11,7 @@ class _PhoneSignUpButtonState extends State<PhoneSignUpButton> {
   Widget build(BuildContext context) {
     return RaisedButton(
         color: Colors.white,
-        onPressed: () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => SignupWithPhone())),
+        onPressed: () => Navigator.pushNamed(context, SignupWithPhone.routeName),
         elevation: 8.0,
         child: Row(
           mainAxisSize: MainAxisSize.min,

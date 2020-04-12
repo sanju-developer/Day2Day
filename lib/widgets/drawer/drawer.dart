@@ -157,10 +157,7 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Profile"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
-              ),
+              onTap: () => Navigator.pushNamed(context, ProfilePage.routeName),
             ),
             ListTile(
               leading: Icon(Icons.help),

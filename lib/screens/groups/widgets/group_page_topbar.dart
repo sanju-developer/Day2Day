@@ -25,7 +25,7 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
                 color: Theme.of(context).primaryColor,
                 tooltip: 'Notification',
                 onPressed: () {
-                  Navigator.push(context, SizeRoute(page: NotificationPage()));
+                  Navigator.pushNamed(context, NotificationPage.routeName);
                 },
               ),
             ],

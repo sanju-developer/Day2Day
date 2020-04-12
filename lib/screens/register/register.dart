@@ -33,10 +33,7 @@ class RegisterPage extends StatelessWidget {
                             child: Text('Wanna login ? ',
                                 style: Theme.of(context).textTheme.body1),
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LoginPage()));
+                              Navigator.pushNamed(context, LoginPage.routeName);
                             },
                           ))
                     ],

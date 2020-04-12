@@ -193,10 +193,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                             duration: Duration(seconds: 2),
                           ));
                         });
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => GroupsPage()));
+                        Navigator.pushNamed(context, GroupsPage.routeName);
                       }
                     },
                     child: Center(
