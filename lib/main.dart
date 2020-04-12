@@ -1,4 +1,4 @@
-import 'package:day2day/screens/entry/entry.dart';
+import 'package:day2day/routes.dart';
 
 import 'package:flutter/material.dart';
 import 'theme.dart' as Theme;
@@ -10,6 +10,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: Theme.customThemeData, home: EntryPage());
+    return MaterialApp(
+      theme: Theme.customThemeData,
+      onGenerateRoute: generateRoute,
+    );
   }
 }
