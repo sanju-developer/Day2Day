@@ -14,6 +14,12 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
   bool isSignUpBtnClicked = false;
   String phone = '';
 
+  bool signUpBtnClicked() {
+    setState(() {
+      isSignUpBtnClicked = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,92 +40,97 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: Center(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        SvgPicture.asset(
-                          'lib/assets/images/login-yellow.svg',
-                          semanticsLabel: 'Acme Logo',
-                          width: 200,
-                          height: 200,
-                        ),
-                        Container(
-                            padding: EdgeInsets.only(
-                              top: 40.0,
+                    child: Form(
+                        key: _formKey,
+                        child: Center(
+                            child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            SvgPicture.asset(
+                              'lib/assets/images/login-yellow.svg',
+                              semanticsLabel: 'Acme Logo',
+                              width: 200,
+                              height: 200,
                             ),
-                            child: Text(
-                              'OTP Verification',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w900, fontSize: 28.0),
-                            )),
-                        Container(
-                          child: RichText(
-                            textAlign: TextAlign.center,
-                            text: TextSpan(
-                              text: 'We will send you an ',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 16.0),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: 'One Time Password',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black)),
-                                TextSpan(text: ' on this mobile number'),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(
-                              top: 30.0, left: 40.0, right: 40.0),
-                          child: Column(
-                            children: <Widget>[
-                              Text(
-                                'Enter Mobile Number',
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              TextFormField(
-                                style: TextStyle(letterSpacing: 5),
-                                textAlign: TextAlign.center,
-                                textAlignVertical: TextAlignVertical.center,
-                                controller: phoneController,
-                                keyboardType: TextInputType.phone,
-                                maxLength: 10,
-                                cursorColor: Theme.of(context).primaryColor,
-                                decoration: InputDecoration(
-                                  counterText: "",
-                                  contentPadding:
-                                      EdgeInsets.symmetric(vertical: 0.0),
+                            Container(
+                                padding: EdgeInsets.only(
+                                  top: 40.0,
                                 ),
-                                onChanged: (value) {
-                                  setState(() {
-                                    phone = value;
-                                  });
-                                  if (_formKey.currentState.validate()) {
-                                    return null;
-                                  }
-                                },
-                                validator: (value) {
-                                  if (value.isEmpty && isSignUpBtnClicked) {
-                                    return 'Please enter phone no!';
-                                  } else if (value.length < 10 &&
-                                      isSignUpBtnClicked) {
-                                    return 'Please enter valid phone no!';
-                                  }
-                                  return null;
-                                },
+                                child: Text(
+                                  'OTP Verification',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 28.0),
+                                )),
+                            Container(
+                              child: RichText(
+                                textAlign: TextAlign.center,
+                                text: TextSpan(
+                                  text: 'We will send you an ',
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 16.0),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                        text: 'One Time Password',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black)),
+                                    TextSpan(text: ' on this mobile number'),
+                                  ],
+                                ),
                               ),
-                            ],
-                          ),
-                        )
-                      ],
-                    )),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(
+                                  top: 30.0, left: 40.0, right: 40.0),
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    'Enter Mobile Number',
+                                    style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 16.0,
+                                        letterSpacing: 0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  TextFormField(
+                                    style: TextStyle(letterSpacing: 5),
+                                    textAlign: TextAlign.center,
+                                    textAlignVertical: TextAlignVertical.center,
+                                    controller: phoneController,
+                                    keyboardType: TextInputType.phone,
+                                    maxLength: 10,
+                                    cursorColor: Theme.of(context).primaryColor,
+                                    decoration: InputDecoration(
+                                      counterText: "",
+                                      contentPadding:
+                                          EdgeInsets.symmetric(vertical: 0.0),
+                                    ),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        phone = value;
+                                      });
+                                      print(phone);
+                                      print(_formKey);
+                                      if (_formKey.currentState.validate()) {
+                                        return null;
+                                      }
+                                    },
+                                    validator: (value) {
+                                      if (value.isEmpty && isSignUpBtnClicked) {
+                                        return 'Please enter phone no!';
+                                      } else if (value.length < 10 &&
+                                          isSignUpBtnClicked) {
+                                        return 'Please enter valid phone no!';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ))),
                   ),
                   Container(
                     padding:
@@ -131,11 +142,14 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                         height: 50,
                         child: FlatButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        OTPVerificationPage('+91 999262312')));
+                            signUpBtnClicked();
+                            if (_formKey.currentState.validate()) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OTPVerificationPage(
+                                          '+91 999262312')));
+                            }
                           },
                           child: Center(
                               child: Text(
