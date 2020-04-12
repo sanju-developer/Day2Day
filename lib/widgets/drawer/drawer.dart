@@ -85,7 +85,7 @@ class _AnimatedDrawerState extends State<AnimatedDrawer>
         animation: animationController,
         builder: (BuildContext context, _) {
           return Material(
-            color: Theme.of(context).scaffoldBackgroundColor,
+            color: LightThemeColors.myCustomGreyColor,
             child: Stack(
               children: <Widget>[
                 Transform.translate(
