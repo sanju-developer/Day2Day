@@ -124,7 +124,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                     errorAnimationController: errorController,
                     controller: textEditingController,
                     onCompleted: (v) {
-                      print("Completed");
+                      print("Completed:::::::::::::::::");
                     },
                     onChanged: (value) {
                       print(value);
@@ -169,7 +169,8 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                   child: FlatButton(
                     onPressed: () {
                       // conditions for validating
-                      if (currentText.length != 6 || currentText != "towtow") {
+                      print(currentText);
+                      if (currentText.length != 6) {
                         errorController.add(ErrorAnimationType
                             .shake); // Triggering error shake animation
                         setState(() {
