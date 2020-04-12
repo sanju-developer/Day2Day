@@ -1,5 +1,3 @@
-import 'package:day2day/widgets/drawer/drawer.dart';
-import 'package:day2day/widgets/size_route/size_route.dart';
 import 'package:day2day/screens/notification/notification.dart';
 
 import 'package:flutter/material.dart';
@@ -12,7 +10,6 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       actions: <Widget>[
-        AnimatedDrawer(),
         Container(
           padding: EdgeInsets.only(right: 10.0),
           child: Column(
