@@ -18,12 +18,15 @@ environment:
 
 dependencies:
   flutter_svg: ^0.17.1
+  pin_code_fields: ^2.5.1
   flutter:
     sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  firebase_auth: ^0.15.5+3
+  google_sign_in: ^4.4.1
 
 dev_dependencies:
   flutter_test:
@@ -41,9 +44,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - lib/assets/
-   - lib/assets/images/
-   - lib/assets/images/login-background.png
+    - lib/assets/
+    - lib/assets/images/
+    - lib/assets/images/login-background.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -59,7 +62,7 @@ flutter:
   # example:
   fonts:
     - family: MartelSans
-      fonts: 
+      fonts:
         - asset: lib/assets/fonts/MartelSans-Regular.ttf
         - asset: lib/assets/fonts/MartelSans-Light.ttf
         - asset: lib/assets/fonts/MartelSans-Bold.ttf

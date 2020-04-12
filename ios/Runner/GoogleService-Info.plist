@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>669075356675-6ih613uo47lvkjadhca4en7aqpmvvdu8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.669075356675-6ih613uo47lvkjadhca4en7aqpmvvdu8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB7PMbf6XGzUN19H5CWRJ5IFJsO4A0BgC4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>669075356675</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.day2day</string>
+	<key>PROJECT_ID</key>
+	<string>day2day-6a336</string>
+	<key>STORAGE_BUCKET</key>
+	<string>day2day-6a336.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:669075356675:ios:9a7e46f08208be4fd62236</string>
+	<key>DATABASE_URL</key>
+	<string>https://day2day-6a336.firebaseio.com</string>
+</dict>
+</plist>
