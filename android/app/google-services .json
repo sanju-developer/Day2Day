@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "669075356675",
+    "firebase_url": "https://day2day-6a336.firebaseio.com",
+    "project_id": "day2day-6a336",
+    "storage_bucket": "day2day-6a336.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669075356675:android:2f39cc599821667fd62236",
+        "android_client_info": {
+          "package_name": "com.example.day2day"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669075356675-lqa566mm2gpnsqqcl0892tfl1od9cesm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpty3rLx9bAv13vuMHrtcbl4rhFs6YoXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669075356675-lqa566mm2gpnsqqcl0892tfl1od9cesm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "669075356675-6ih613uo47lvkjadhca4en7aqpmvvdu8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.day2day"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

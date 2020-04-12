@@ -14,7 +14,7 @@ class OTPVerificationPage extends StatefulWidget {
 }
 
 class _OTPVerificationPageState extends State<OTPVerificationPage> {
-  var onTapRecognizer;
+  TapGestureRecognizer onTapRecognizer;
 
   final TextEditingController textEditingController = TextEditingController()
     ..text = "";
