@@ -120,6 +120,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                     fieldWidth: 40,
                     activeFillColor: Theme.of(context).scaffoldBackgroundColor,
                     enableActiveFill: true,
+                    autoFocus: true,
                     errorAnimationController: errorController,
                     controller: textEditingController,
                     onCompleted: (v) {
