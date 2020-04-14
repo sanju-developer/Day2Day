@@ -7,6 +7,7 @@ import 'package:day2day/screens/profile/profile.dart';
 import 'package:day2day/screens/register/register.dart';
 import 'package:day2day/screens/signup/signup_with_phone/otp_verification.dart';
 import 'package:day2day/screens/signup/signup_with_phone/signup_with_phone.dart';
+import 'package:day2day/widgets/size_route/size_route.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -20,39 +21,50 @@ class Routes {
   static const String OTPVerificationPageRoute = '/otpVerification';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    Widget screenToRender;
     switch (settings.name) {
       case EntryPageRoute:
-        screenToRender = EntryPage();
-        break;
+        return MaterialPageRoute(
+          builder: (context) => EntryPage(),
+        );
+
       case GroupsPageRoute:
-        screenToRender = GroupsPage();
-        break;
+        return MaterialPageRoute(
+          builder: (context) => GroupsPage(),
+        );
+
       case LoginPageRoute:
-        screenToRender = LoginPage();
-        break;
+        return MaterialPageRoute(
+          builder: (context) => LoginPage(),
+        );
+
       case NotificationPageRoute:
-        screenToRender = NotificationPage();
-        break;
+        return SizeRoute(page: NotificationPage());
+
       case ProfilePageRoute:
-        screenToRender = ProfilePage();
-        break;
+        return MaterialPageRoute(
+          builder: (context) => ProfilePage(),
+        );
+
       case RegisterPageRoute:
-        screenToRender = RegisterPage();
-        break;
+        return MaterialPageRoute(
+          builder: (context) => RegisterPage(),
+        );
+
       case SignupWithPhoneRoute:
-        screenToRender = SignupWithPhone();
-        break;
+        return MaterialPageRoute(
+          builder: (context) => SignupWithPhone(),
+        );
+
       case OTPVerificationPageRoute:
         OTPVerificationPageArguments args = settings.arguments;
-        screenToRender = OTPVerificationPage(args.phoneNumber);
-        break;
-      default:
-        screenToRender = ErrorScreen();
-    }
+        return MaterialPageRoute(
+          builder: (context) => OTPVerificationPage(args.phoneNumber),
+        );
 
-    return MaterialPageRoute(
-      builder: (context) => screenToRender,
-    );
+      default:
+        return MaterialPageRoute(
+          builder: (context) => ErrorScreen(),
+        );
+    }
   }
 }

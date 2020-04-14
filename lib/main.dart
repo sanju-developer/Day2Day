@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: Theme.customThemeData,
-      onGenerateRoute: generateRoute,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }
