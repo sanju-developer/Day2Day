@@ -3,7 +3,6 @@ import 'package:day2day/screens/register/widgets/register_form.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
-  static const String routeName = '/register';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

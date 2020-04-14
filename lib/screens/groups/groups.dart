@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class GroupsPage extends StatefulWidget {
-  static const String routeName = '/groups';
   @override
   _GroupState createState() => _GroupState();
 }

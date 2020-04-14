@@ -13,7 +13,6 @@ class OTPVerificationPageArguments {
 }
 
 class OTPVerificationPage extends StatefulWidget {
-  static const String routeName = '/otpVerification';
   final String phoneNumber;
   OTPVerificationPage(this.phoneNumber);
   @override
