@@ -1,3 +1,4 @@
+import 'package:day2day/routes.dart';
 import 'package:day2day/screens/signup/signup_with_phone/otp_verification.dart';
 import 'package:flutter/material.dart';
 
@@ -146,9 +147,8 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                             if (_formKey.currentState.validate()) {
                               Navigator.pushNamed(
                                 context,
-                                OTPVerificationPage.routeName,
-                                arguments:
-                                    OTPVerificationPageArguments(phone),
+                                Routes.OTPVerificationPageRoute,
+                                arguments: OTPVerificationPageArguments(phone),
                               );
                             }
                           },

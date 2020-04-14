@@ -1,4 +1,4 @@
-import 'package:day2day/screens/signup/signup_with_phone/signup_with_phone.dart';
+import 'package:day2day/routes.dart';
 import 'package:flutter/material.dart';
 
 class PhoneSignUpButton extends StatefulWidget {
@@ -11,7 +11,8 @@ class _PhoneSignUpButtonState extends State<PhoneSignUpButton> {
   Widget build(BuildContext context) {
     return RaisedButton(
         color: Colors.white,
-        onPressed: () => Navigator.pushNamed(context, SignupWithPhone.routeName),
+        onPressed: () =>
+            Navigator.pushNamed(context, Routes.SignupWithPhoneRoute),
         elevation: 8.0,
         child: Row(
           mainAxisSize: MainAxisSize.min,

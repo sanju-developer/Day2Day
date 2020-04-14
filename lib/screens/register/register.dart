@@ -1,6 +1,6 @@
+import 'package:day2day/routes.dart';
 import 'package:day2day/screens/register/widgets/register_form.dart';
 import 'package:flutter/material.dart';
-import 'package:day2day/screens/login/login.dart';
 
 class RegisterPage extends StatelessWidget {
   static const String routeName = '/register';
@@ -33,7 +33,8 @@ class RegisterPage extends StatelessWidget {
                             child: Text('Wanna login ? ',
                                 style: Theme.of(context).textTheme.body1),
                             onPressed: () {
-                              Navigator.pushNamed(context, LoginPage.routeName);
+                              Navigator.pushNamed(
+                                  context, Routes.LoginPageRoute);
                             },
                           ))
                     ],

@@ -1,8 +1,8 @@
 import 'dart:math' as math;
+import 'package:day2day/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:day2day/assets/colors/colors.dart';
-import 'package:day2day/screens/profile/profile.dart';
 
 class AnimatedDrawer extends StatefulWidget {
   final Widget child;
@@ -157,7 +157,8 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Profile"),
-              onTap: () => Navigator.pushNamed(context, ProfilePage.routeName),
+              onTap: () =>
+                  Navigator.pushNamed(context, Routes.ProfilePageRoute),
             ),
             ListTile(
               leading: Icon(Icons.help),

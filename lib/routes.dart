@@ -8,41 +8,52 @@ import 'package:day2day/screens/signup/signup_with_phone/otp_verification.dart';
 import 'package:day2day/screens/signup/signup_with_phone/signup_with_phone.dart';
 import 'package:flutter/material.dart';
 
-Route<dynamic> generateRoute(RouteSettings settings) {
-  Widget screenToRender;
-  switch (settings.name) {
-    case EntryPage.routeName:
-      screenToRender = EntryPage();
-      break;
-    case GroupsPage.routeName:
-      screenToRender = GroupsPage();
-      break;
-    case LoginPage.routeName:
-      screenToRender = LoginPage();
-      break;
-    case NotificationPage.routeName:
-      screenToRender = NotificationPage();
-      break;
-    case ProfilePage.routeName:
-      screenToRender = ProfilePage();
-      break;
-    case RegisterPage.routeName:
-      screenToRender = RegisterPage();
-      break;
-    case SignupWithPhone.routeName:
-      screenToRender = SignupWithPhone();
-      break;
-    case OTPVerificationPage.routeName:
-      OTPVerificationPageArguments args = settings.arguments;
-      screenToRender = OTPVerificationPage(args.phoneNumber);
-      break;
-    default:
-      screenToRender = ErrorScreen();
-  }
+class Routes {
+  static const String EntryPageRoute = '/';
+  static const String GroupsPageRoute = '/groups';
+  static const String LoginPageRoute = '/login';
+  static const String NotificationPageRoute = '/notification';
+  static const String ProfilePageRoute = '/profile';
+  static const String RegisterPageRoute = '/register';
+  static const String SignupWithPhoneRoute = '/signupPhone';
+  static const String OTPVerificationPageRoute = '/otpVerification';
 
-  return MaterialPageRoute(
-    builder: (context) => screenToRender,
-  );
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    Widget screenToRender;
+    switch (settings.name) {
+      case EntryPageRoute:
+        screenToRender = EntryPage();
+        break;
+      case GroupsPageRoute:
+        screenToRender = GroupsPage();
+        break;
+      case LoginPageRoute:
+        screenToRender = LoginPage();
+        break;
+      case NotificationPageRoute:
+        screenToRender = NotificationPage();
+        break;
+      case ProfilePageRoute:
+        screenToRender = ProfilePage();
+        break;
+      case RegisterPageRoute:
+        screenToRender = RegisterPage();
+        break;
+      case SignupWithPhoneRoute:
+        screenToRender = SignupWithPhone();
+        break;
+      case OTPVerificationPageRoute:
+        OTPVerificationPageArguments args = settings.arguments;
+        screenToRender = OTPVerificationPage(args.phoneNumber);
+        break;
+      default:
+        screenToRender = ErrorScreen();
+    }
+
+    return MaterialPageRoute(
+      builder: (context) => screenToRender,
+    );
+  }
 }
 
 class ErrorScreen extends StatelessWidget {

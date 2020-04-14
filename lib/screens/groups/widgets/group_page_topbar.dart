@@ -1,4 +1,4 @@
-import 'package:day2day/screens/notification/notification.dart';
+import 'package:day2day/routes.dart';
 
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,7 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
                 color: Theme.of(context).primaryColor,
                 tooltip: 'Notification',
                 onPressed: () {
-                  Navigator.pushNamed(context, NotificationPage.routeName);
+                  Navigator.pushNamed(context, Routes.NotificationPageRoute);
                 },
               ),
             ],

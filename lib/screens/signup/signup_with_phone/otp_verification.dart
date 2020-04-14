@@ -1,4 +1,4 @@
-import 'package:day2day/screens/groups/groups.dart';
+import 'package:day2day/routes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -193,7 +193,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                             duration: Duration(seconds: 2),
                           ));
                         });
-                        Navigator.pushNamed(context, GroupsPage.routeName);
+                        Navigator.pushNamed(context, Routes.GroupsPageRoute);
                       }
                     },
                     child: Center(
