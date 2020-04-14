@@ -1,4 +1,5 @@
 import 'package:day2day/screens/entry/entry.dart';
+import 'package:day2day/screens/error/error.dart';
 import 'package:day2day/screens/groups/groups.dart';
 import 'package:day2day/screens/login/login.dart';
 import 'package:day2day/screens/notification/notification.dart';
@@ -52,20 +53,6 @@ class Routes {
 
     return MaterialPageRoute(
       builder: (context) => screenToRender,
-    );
-  }
-}
-
-class ErrorScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Error'),
-      ),
-      body: Center(
-        child: Text('ERROR'),
-      ),
     );
   }
 }
