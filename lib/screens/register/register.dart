@@ -1,6 +1,6 @@
+import 'package:day2day/routes.dart';
 import 'package:day2day/screens/register/widgets/register_form.dart';
 import 'package:flutter/material.dart';
-import 'package:day2day/screens/login/login.dart';
 
 class RegisterPage extends StatelessWidget {
   @override
@@ -32,10 +32,8 @@ class RegisterPage extends StatelessWidget {
                             child: Text('Wanna login ? ',
                                 style: Theme.of(context).textTheme.body1),
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LoginPage()));
+                              Navigator.pushNamed(
+                                  context, Routes.LoginPageRoute);
                             },
                           ))
                     ],

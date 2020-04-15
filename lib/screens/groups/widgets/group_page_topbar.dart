@@ -1,5 +1,4 @@
-import 'package:day2day/widgets/size_route/size_route.dart';
-import 'package:day2day/screens/notification/notification.dart';
+import 'package:day2day/routes.dart';
 
 import 'package:flutter/material.dart';
 
@@ -9,7 +8,7 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       actions: <Widget>[
         Container(
           padding: EdgeInsets.only(right: 10.0),
@@ -23,7 +22,7 @@ class GroupPageTopbar extends StatelessWidget implements PreferredSizeWidget {
                 color: Theme.of(context).primaryColor,
                 tooltip: 'Notification',
                 onPressed: () {
-                  Navigator.push(context, SizeRoute(page: NotificationPage()));
+                  Navigator.pushNamed(context, Routes.NotificationPageRoute);
                 },
               ),
             ],

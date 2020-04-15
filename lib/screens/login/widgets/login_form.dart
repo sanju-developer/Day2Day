@@ -1,4 +1,4 @@
-import 'package:day2day/screens/groups/groups.dart';
+import 'package:day2day/routes.dart';
 
 import 'package:flutter/material.dart';
 
@@ -170,10 +170,7 @@ class _LoginFormState extends State<LoginForm> {
                     Scaffold.of(context).showSnackBar(
                         SnackBar(content: Text('Processing Data')));
                     // showLoaderOnLogin();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => GroupsPage()),
-                    );
+                    Navigator.pushNamed(context, Routes.GroupsPageRoute);
                   }
                 },
                 padding: const EdgeInsets.fromLTRB(30.0, 8.0, 30.0, 8.0),
