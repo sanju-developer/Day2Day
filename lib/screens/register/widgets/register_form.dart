@@ -99,6 +99,7 @@ class _RegisterFormState extends State<RegisterForm> {
           SizedBox(height: 18),
           // email
           TextFormField(
+            initialValue: '+91',
             keyboardType: TextInputType.emailAddress,
             maxLength: 50,
             readOnly: showLoader,
