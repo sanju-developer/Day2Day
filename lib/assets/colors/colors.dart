@@ -6,4 +6,5 @@ class LightThemeColors {
   static const Color myCustomGreenColor = const Color(0xff19CC39A);
   static const Color myCustomLYellowColor = const Color(0XFFFFB931);
   static const Color myCustomLightGreyColor = const Color(0xfff7f6f3);
+  static const Color myCustomGreyColor = const Color(0xFFCFCECC);
 }

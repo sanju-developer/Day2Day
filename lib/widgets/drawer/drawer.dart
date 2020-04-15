@@ -1,8 +1,8 @@
 import 'dart:math' as math;
+import 'package:day2day/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:day2day/assets/colors/colors.dart';
-import 'package:day2day/screens/profile/profile.dart';
 
 class AnimatedDrawer extends StatefulWidget {
   final Widget child;
@@ -85,7 +85,7 @@ class _AnimatedDrawerState extends State<AnimatedDrawer>
         animation: animationController,
         builder: (BuildContext context, _) {
           return Material(
-            color: Theme.of(context).scaffoldBackgroundColor,
+            color: LightThemeColors.myCustomGreyColor,
             child: Stack(
               children: <Widget>[
                 Transform.translate(
@@ -157,10 +157,8 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Profile"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
-              ),
+              onTap: () =>
+                  Navigator.pushNamed(context, Routes.ProfilePageRoute),
             ),
             ListTile(
               leading: Icon(Icons.help),

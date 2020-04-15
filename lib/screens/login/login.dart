@@ -1,5 +1,5 @@
+import 'package:day2day/routes.dart';
 import 'package:day2day/screens/login/widgets/login_form.dart';
-import 'package:day2day/screens/register/register.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
@@ -35,10 +35,10 @@ class LoginPage extends StatelessWidget {
                         style: Theme.of(context).textTheme.body1,
                       ),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegisterPage()));
+                        Navigator.pushNamed(
+                          context,
+                          Routes.RegisterPageRoute,
+                        );
                       },
                     )
                   ],

@@ -1,10 +1,16 @@
-import 'package:day2day/screens/groups/groups.dart';
+import 'package:day2day/routes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+class OTPVerificationPageArguments {
+  final String phoneNumber;
+
+  OTPVerificationPageArguments(this.phoneNumber);
+}
 
 class OTPVerificationPage extends StatefulWidget {
   final String phoneNumber;
@@ -186,10 +192,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
                             duration: Duration(seconds: 2),
                           ));
                         });
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => GroupsPage()));
+                        Navigator.pushNamed(context, Routes.GroupsPageRoute);
                       }
                     },
                     child: Center(
