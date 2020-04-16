@@ -13,7 +13,7 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
   final _formKey = GlobalKey<FormState>();
   final phoneController = TextEditingController();
   bool isSignUpBtnClicked = false;
-  String phoneRegex = r'^[789]\d{9}$$';
+  final String phoneRegex = r'^[789]\d{9}$$';
   String phone = '';
 
   void signUpBtnClicked() {
@@ -22,7 +22,7 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
     });
   }
 
-  bool validateIndianPhone(String value) {
+  bool phoneNumberValidator(String value) {
     RegExp regex = new RegExp(phoneRegex);
     if (!regex.hasMatch(value))
       return true;
@@ -131,7 +131,7 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                                       } else if (value.length < 10 &&
                                           isSignUpBtnClicked) {
                                         return 'Please enter valid phone no!';
-                                      } else if (validateIndianPhone(value) &&
+                                      } else if (!phoneNumberValidator(value) &&
                                           isSignUpBtnClicked) {
                                         return 'Please enter a valid phone number';
                                       }
