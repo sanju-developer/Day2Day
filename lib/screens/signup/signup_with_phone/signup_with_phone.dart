@@ -24,7 +24,7 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
 
   bool phoneNumberValidator(String value) {
     RegExp regex = new RegExp(phoneRegex);
-    if (!regex.hasMatch(value))
+    if (regex.hasMatch(value))
       return true;
     else
       return false;
