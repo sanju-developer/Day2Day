@@ -19,14 +19,6 @@ class MerchantPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      IconButton(
-                        alignment: Alignment.topLeft,
-                        onPressed: () => Navigator.pop(context),
-                        icon: Icon(
-                          Icons.arrow_back,
-                          size: 28.0,
-                        ),
-                      ),
                       Container(
                         padding: EdgeInsets.only(left: 15.0),
                         child: Column(
@@ -105,6 +97,20 @@ class MerchantPage extends StatelessWidget {
                           bottomLeft: Radius.circular(40))),
                   color: Colors.white,
                   elevation: 8.0,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      IconButton(
+                        padding: EdgeInsets.only(top: 20.0, left: 20.0),
+                        alignment: Alignment.topLeft,
+                        onPressed: () => Navigator.pop(context),
+                        icon: Icon(
+                          Icons.arrow_back,
+                          size: 28.0,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
