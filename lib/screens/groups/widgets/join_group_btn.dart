@@ -1,3 +1,5 @@
+import 'package:day2day/routes.dart';
+import 'package:day2day/screens/merchant_page/merchant_page.dart';
 import 'package:flutter/material.dart';
 
 class _BottomSheetContent extends StatelessWidget {
@@ -33,6 +35,8 @@ class _BottomSheetContent extends StatelessWidget {
                   child: Card(
                     elevation: 8.0,
                     child: ListTile(
+                      onTap: () => Navigator.pushNamed(
+                          context, Routes.MerchantPageRoute),
                       leading: FlutterLogo(size: 72.0),
                       title: Text(
                         'Three-line ListTile',
