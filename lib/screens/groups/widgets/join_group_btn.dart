@@ -1,5 +1,4 @@
 import 'package:day2day/routes.dart';
-import 'package:day2day/screens/merchant_page/merchant_page.dart';
 import 'package:flutter/material.dart';
 
 class _BottomSheetContent extends StatelessWidget {
