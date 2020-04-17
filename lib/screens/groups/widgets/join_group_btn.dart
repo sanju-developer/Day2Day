@@ -62,8 +62,10 @@ class ModalBottomSheetDemo extends StatelessWidget {
   void _showModalBottomSheet(BuildContext context) {
     showModalBottomSheet<void>(
       context: context,
+      isScrollControlled: true,
       builder: (context) {
-        return _BottomSheetContent();
+        return FractionallySizedBox(
+            heightFactor: 0.8, child: _BottomSheetContent());
       },
     );
   }

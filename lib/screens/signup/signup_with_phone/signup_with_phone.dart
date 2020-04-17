@@ -13,12 +13,21 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
   final _formKey = GlobalKey<FormState>();
   final phoneController = TextEditingController();
   bool isSignUpBtnClicked = false;
+  final String phoneRegex = r'^[789]\d{9}$$';
   String phone = '';
 
   void signUpBtnClicked() {
     setState(() {
       isSignUpBtnClicked = true;
     });
+  }
+
+  bool phoneNumberValidator(String value) {
+    RegExp regex = new RegExp(phoneRegex);
+    if (regex.hasMatch(value))
+      return true;
+    else
+      return false;
   }
 
   @override
@@ -103,6 +112,7 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                                     maxLength: 10,
                                     cursorColor: Theme.of(context).primaryColor,
                                     decoration: InputDecoration(
+                                      prefixText: '+91',
                                       counterText: "",
                                       contentPadding:
                                           EdgeInsets.symmetric(vertical: 0.0),
@@ -111,7 +121,6 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                                       setState(() {
                                         phone = value;
                                       });
-                                      print(_formKey);
                                       if (_formKey.currentState.validate()) {
                                         return null;
                                       }
@@ -122,6 +131,9 @@ class _SignupWithPhoneState extends State<SignupWithPhone> {
                                       } else if (value.length < 10 &&
                                           isSignUpBtnClicked) {
                                         return 'Please enter valid phone no!';
+                                      } else if (!phoneNumberValidator(value) &&
+                                          isSignUpBtnClicked) {
+                                        return 'Please enter a valid phone number';
                                       }
                                       return null;
                                     },
