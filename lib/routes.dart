@@ -7,7 +7,7 @@ import 'package:day2day/screens/profile/profile.dart';
 import 'package:day2day/screens/register/register.dart';
 import 'package:day2day/screens/signup/signup_with_phone/otp_verification.dart';
 import 'package:day2day/screens/signup/signup_with_phone/signup_with_phone.dart';
-import 'package:day2day/widgets/size_route/size_route.dart';
+import 'package:day2day/widgets/size_route/scale_route.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -38,7 +38,7 @@ class Routes {
         );
 
       case NotificationPageRoute:
-        return SizeRoute(page: NotificationPage());
+        return ScaleRoute(page: NotificationPage());
 
       case ProfilePageRoute:
         return MaterialPageRoute(
