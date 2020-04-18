@@ -2,6 +2,7 @@ import 'package:day2day/screens/entry/entry.dart';
 import 'package:day2day/screens/error/error.dart';
 import 'package:day2day/screens/groups/groups.dart';
 import 'package:day2day/screens/login/login.dart';
+import 'package:day2day/screens/merchant_page/merchant_page.dart';
 import 'package:day2day/screens/notification/notification.dart';
 import 'package:day2day/screens/profile/profile.dart';
 import 'package:day2day/screens/register/register.dart';
@@ -19,6 +20,7 @@ class Routes {
   static const String RegisterPageRoute = '/register';
   static const String SignupWithPhoneRoute = '/signupPhone';
   static const String OTPVerificationPageRoute = '/otpVerification';
+  static const String MerchantPageRoute = '/merchantPage';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -59,6 +61,11 @@ class Routes {
         OTPVerificationPageArguments args = settings.arguments;
         return MaterialPageRoute(
           builder: (context) => OTPVerificationPage(args.phoneNumber),
+        );
+
+      case MerchantPageRoute:
+        return MaterialPageRoute(
+          builder: (context) => MerchantPage(),
         );
 
       default:
