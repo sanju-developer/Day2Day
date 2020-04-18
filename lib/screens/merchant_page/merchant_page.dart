@@ -82,8 +82,8 @@ class MerchantPage extends StatelessWidget {
               alignment: Alignment.topCenter,
               padding: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height * .40,
-                right: 10.0,
-                left: 10.0,
+                right: 5.0,
+                left: 5.0,
               ),
               child: Container(
                 height: MediaQuery.of(context).size.height,
@@ -93,8 +93,8 @@ class MerchantPage extends StatelessWidget {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40),
-                          bottomRight: Radius.circular(40),
-                          bottomLeft: Radius.circular(40))),
+                          bottomRight: Radius.circular(30),
+                          bottomLeft: Radius.circular(30))),
                   color: Colors.white,
                   elevation: 8.0,
                   child: Column(
