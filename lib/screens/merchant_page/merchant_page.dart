@@ -92,9 +92,6 @@ class MerchantPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                color: Colors.white,
-              ),
             ],
           ),
           // The card widget with top padding,
@@ -148,7 +145,7 @@ class MerchantPage extends StatelessWidget {
                           'Joined Members:',
                           style: TextStyle(
                               color: Theme.of(context).buttonColor,
-                              fontSize: 22.0,
+                              fontSize: 24.0,
                               fontWeight: FontWeight.w800),
                         ),
                         Wrap(
@@ -172,7 +169,7 @@ class MerchantPage extends StatelessWidget {
                           'Rating:',
                           style: TextStyle(
                               color: Theme.of(context).buttonColor,
-                              fontSize: 22.0,
+                              fontSize: 24.0,
                               fontWeight: FontWeight.w800),
                         ),
                         RatingBar(
@@ -201,7 +198,7 @@ class MerchantPage extends StatelessWidget {
                                   'Other Groups:',
                                   style: TextStyle(
                                       color: Theme.of(context).buttonColor,
-                                      fontSize: 22.0,
+                                      fontSize: 24.0,
                                       fontWeight: FontWeight.w800),
                                 ),
                                 MerchantListCarousel(),
