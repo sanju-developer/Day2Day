@@ -1,26 +1,29 @@
-import 'package:day2day/widgets/button/google_sign_up/google_sign_up.dart';
-import 'package:day2day/widgets/button/sign_up_with_phone/sign_up_with_phone_btn.dart';
+import 'package:day2day/blocs/authentication/authentication_bloc.dart';
+import 'package:day2day/screens/groups/groups.dart';
+import 'package:day2day/screens/login/login.dart';
+import 'package:day2day/screens/splash/splash.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EntryPage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _EntryPageState();
-  }
-}
-
-class _EntryPageState extends State<EntryPage> {
+class EntryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[GoogleSignUpButton(), PhoneSignUpButton()],
-        ),
-      ),
+    return BlocBuilder<AuthenticationBloc, AuthenticationState>(
+      builder: (context, state) {
+        if (state is AuthenticationUnintialized) {
+          return SplashPage();
+        }
+        if (state is AuthenticationSuccess) {
+          return GroupsPage();
+        }
+        if (state is AuthenticationFailure) {
+          return LoginPage();
+        }
+        if (state is AuthenticationInProgress) {
+          return CircularProgressIndicator();
+        }
+      },
     );
   }
 }
