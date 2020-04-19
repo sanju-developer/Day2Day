@@ -6,7 +6,6 @@ import 'package:day2day/screens/login/widgets/buttons/phone_number_sign_in.dart'
 import 'package:day2day/services/user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
