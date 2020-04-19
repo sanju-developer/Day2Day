@@ -1,8 +1,10 @@
 import 'dart:math' as math;
+import 'package:day2day/blocs/authentication/authentication_bloc.dart';
 import 'package:day2day/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:day2day/assets/colors/colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AnimatedDrawer extends StatefulWidget {
   final Widget child;
@@ -163,6 +165,13 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.help),
               title: Text("Help"),
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text("Log Out"),
+              onTap: () {
+                BlocProvider.of<AuthenticationBloc>(context).add(LoggedOut());
+              },
             ),
           ],
         ),
