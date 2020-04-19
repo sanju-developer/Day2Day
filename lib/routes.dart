@@ -5,9 +5,6 @@ import 'package:day2day/screens/login/login.dart';
 import 'package:day2day/screens/login/phone_login.dart';
 import 'package:day2day/screens/notification/notification.dart';
 import 'package:day2day/screens/profile/profile.dart';
-import 'package:day2day/screens/register/register.dart';
-import 'package:day2day/screens/signup/signup_with_phone/otp_verification.dart';
-import 'package:day2day/screens/signup/signup_with_phone/signup_with_phone.dart';
 import 'package:day2day/widgets/size_route/size_route.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +15,6 @@ class Routes {
   static const String PhoneLoginPageRoute = '/phone-login';
   static const String NotificationPageRoute = '/notification';
   static const String ProfilePageRoute = '/profile';
-  static const String RegisterPageRoute = '/register';
-  static const String SignupWithPhoneRoute = '/signupPhone';
-  static const String OTPVerificationPageRoute = '/otpVerification';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -50,22 +44,6 @@ class Routes {
       case ProfilePageRoute:
         return MaterialPageRoute(
           builder: (context) => ProfilePage(),
-        );
-
-      case RegisterPageRoute:
-        return MaterialPageRoute(
-          builder: (context) => RegisterPage(),
-        );
-
-      case SignupWithPhoneRoute:
-        return MaterialPageRoute(
-          builder: (context) => SignupWithPhone(),
-        );
-
-      case OTPVerificationPageRoute:
-        OTPVerificationPageArguments args = settings.arguments;
-        return MaterialPageRoute(
-          builder: (context) => OTPVerificationPage(args.phoneNumber),
         );
 
       default:

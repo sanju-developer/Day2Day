@@ -90,29 +90,6 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 50.0,
                     ),
-                    Column(
-                      children: <Widget>[
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text('Don\'t have an account! ',
-                                style: Theme.of(context).textTheme.body1),
-                            FlatButton(
-                              child: Text(
-                                'Sign up here',
-                                style: Theme.of(context).textTheme.body1,
-                              ),
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  Routes.RegisterPageRoute,
-                                );
-                              },
-                            )
-                          ],
-                        )
-                      ],
-                    )
                   ],
                 ),
               ],
