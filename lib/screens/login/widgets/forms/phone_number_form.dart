@@ -49,7 +49,7 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
             'OTP Verification',
             style: TextStyle(
               fontWeight: FontWeight.w900,
-              fontSize: 28.0,
+              fontSize: 22.0,
             ),
           ),
         ),
@@ -73,9 +73,20 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
             ],
           ),
         ),
+        Container(
+          padding: EdgeInsets.only(top: 30.0),
+          child: Text(
+            'Enter Mobile Number',
+            style: TextStyle(
+                color: Colors.grey,
+                fontSize: 16.0,
+                letterSpacing: 0,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
         SizedBox(height: 30.0),
         Padding(
-          padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+          padding: const EdgeInsets.only(left: 40.0, right: 40.0),
           child: Form(
             key: _formKey,
             child: TextFormField(
@@ -88,7 +99,6 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.phone_iphone),
                 prefixText: _countryCode,
-                labelText: "Mobile Number",
                 counterText: "",
                 contentPadding: EdgeInsets.symmetric(vertical: 0.0),
               ),
@@ -104,10 +114,13 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
           ),
         ),
         SizedBox(
-          height: 16.0,
+          height: 25.0,
         ),
         RaisedButton(
-          padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+          padding: const EdgeInsets.symmetric(
+            vertical: 8.0,
+            horizontal: 95.0,
+          ),
           onPressed: () {
             if (_formKey.currentState.validate()) {
               String _phoneNumberWithCountryCode =

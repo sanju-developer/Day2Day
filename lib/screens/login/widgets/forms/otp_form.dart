@@ -46,7 +46,7 @@ class _OTPFormState extends State<OTPForm> {
             'Phone Number Verification',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 28.0,
+              fontSize: 22.0,
             ),
             textAlign: TextAlign.center,
           ),
