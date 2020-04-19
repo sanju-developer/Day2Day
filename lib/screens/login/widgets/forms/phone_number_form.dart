@@ -86,10 +86,11 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
         ),
         SizedBox(height: 30.0),
         Padding(
-          padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+          padding: const EdgeInsets.only(left: 35.0, right: 35.0),
           child: Form(
             key: _formKey,
             child: TextFormField(
+              autofocus: true,
               style: TextStyle(letterSpacing: 5),
               textAlignVertical: TextAlignVertical.center,
               controller: _phoneController,

@@ -75,6 +75,7 @@ class _OTPFormState extends State<OTPForm> {
         Padding(
           padding: const EdgeInsets.only(left: 30.0, right: 30.0),
           child: PinCodeTextField(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             textInputType: TextInputType.number,
             length: 6,
             inactiveFillColor: Theme.of(context).scaffoldBackgroundColor,
@@ -87,7 +88,7 @@ class _OTPFormState extends State<OTPForm> {
             animationDuration: Duration(milliseconds: 300),
             fieldHeight: 50,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            fieldWidth: 40,
+            fieldWidth: 30,
             activeFillColor: Theme.of(context).scaffoldBackgroundColor,
             enableActiveFill: true,
             errorAnimationController: _errorController,
