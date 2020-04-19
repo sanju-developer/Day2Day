@@ -8,17 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PhoneLoginPageArguments {
-  final UserRepository userRepository;
-
-  PhoneLoginPageArguments(this.userRepository);
-}
-
 class PhoneLoginPage extends StatefulWidget {
-  final UserRepository userRepository;
-
-  const PhoneLoginPage({Key key, @required this.userRepository})
-      : super(key: key);
   @override
   _PhoneLoginPageState createState() => _PhoneLoginPageState();
 }
@@ -38,7 +28,9 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider<LoginBloc>(
-        create: (context) => LoginBloc(userRepository: widget.userRepository),
+        create: (context) => LoginBloc(
+          userRepository: RepositoryProvider.of<UserRepository>(context),
+        ),
         child: BlocListener<LoginBloc, LoginState>(
           listener: (context, state) {
             if (state is OTPSentSuccess) {
