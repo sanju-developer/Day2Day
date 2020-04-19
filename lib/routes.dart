@@ -2,6 +2,7 @@ import 'package:day2day/screens/entry/entry.dart';
 import 'package:day2day/screens/error/error.dart';
 import 'package:day2day/screens/groups/groups.dart';
 import 'package:day2day/screens/login/login.dart';
+import 'package:day2day/screens/login/phone_login.dart';
 import 'package:day2day/screens/notification/notification.dart';
 import 'package:day2day/screens/profile/profile.dart';
 import 'package:day2day/screens/register/register.dart';
@@ -14,6 +15,7 @@ class Routes {
   static const String EntryPageRoute = '/';
   static const String GroupsPageRoute = '/groups';
   static const String LoginPageRoute = '/login';
+  static const String PhoneLoginPageRoute = '/phone-login';
   static const String NotificationPageRoute = '/notification';
   static const String ProfilePageRoute = '/profile';
   static const String RegisterPageRoute = '/register';
@@ -35,6 +37,11 @@ class Routes {
       case LoginPageRoute:
         return MaterialPageRoute(
           builder: (context) => LoginPage(),
+        );
+
+      case PhoneLoginPageRoute:
+        return MaterialPageRoute(
+          builder: (context) => PhoneLoginPage(),
         );
 
       case NotificationPageRoute:
