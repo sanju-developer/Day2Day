@@ -142,6 +142,9 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
             ),
           ),
         ),
+        SizedBox(
+          height: 30.0,
+        ), // Hack to increase the scrollViewHeight to have space for error message
       ],
     );
   }
