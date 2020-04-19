@@ -55,6 +55,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Stream<LoginState> _mapOTPCodeEnteredToState(String otpCode) async* {
     try {
+      yield LoginInProgress();
       await _userRepository.signInWithOTP(otpCode);
       yield LoginSuccess();
     } catch (e) {

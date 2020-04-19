@@ -16,3 +16,5 @@ class LoginFailure extends LoginState {}
 class OTPSentSuccess extends LoginState {}
 
 class OTPReSentSuccess extends LoginState {}
+
+class LoginInProgress extends LoginState {}
