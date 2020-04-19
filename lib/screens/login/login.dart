@@ -69,15 +69,6 @@ class _LoginPageState extends State<LoginPage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SvgPicture.asset(
-                      'lib/assets/images/login.svg',
-                      semanticsLabel: 'Acme Logo',
-                      width: 250,
-                      height: 200,
-                    ),
-                    SizedBox(
-                      height: 80.0,
-                    ),
                     GoogleSignInButton(
                       onPress: _onPressGoogleLoginButton,
                     ),
@@ -86,9 +77,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     PhoneSignInButton(
                       onPress: _onPressPhoneLoginButton,
-                    ),
-                    SizedBox(
-                      height: 50.0,
                     ),
                   ],
                 ),
