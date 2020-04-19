@@ -135,34 +135,46 @@ class _OTPFormState extends State<OTPForm> {
           margin: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 30),
           child: ButtonTheme(
             height: 50,
-            child: FlatButton(
-              onPressed: () {
-                String otpCode = _textEditingController.text;
-                if (otpCode.length != 6) {
-                  _errorController.add(
-                    ErrorAnimationType.shake,
-                  ); // Triggering error shake animation
-                  setState(() {
-                    hasError = true;
-                  });
-                } else {
-                  setState(() {
-                    hasError = false;
-                    BlocProvider.of<LoginBloc>(context)
-                        .add(OTPCodeEntered(otpCode));
-                  });
-                }
-              },
-              child: Center(
-                child: Text(
-                  "VERIFY",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+            child: BlocBuilder<LoginBloc, LoginState>(
+              builder: (context, state) {
+                return FlatButton(
+                  onPressed: state is LoginInProgress
+                      ? null
+                      : () {
+                          String otpCode = _textEditingController.text;
+                          if (otpCode.length != 6) {
+                            _errorController.add(
+                              ErrorAnimationType.shake,
+                            ); // Triggering error shake animation
+                            setState(() {
+                              hasError = true;
+                            });
+                          } else {
+                            setState(() {
+                              hasError = false;
+                              BlocProvider.of<LoginBloc>(context)
+                                  .add(OTPCodeEntered(otpCode));
+                            });
+                          }
+                        },
+                  child: Center(
+                    child: state is LoginInProgress
+                        ? CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              Colors.white,
+                            ),
+                          )
+                        : Text(
+                            "VERIFY",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ),
           decoration: BoxDecoration(
