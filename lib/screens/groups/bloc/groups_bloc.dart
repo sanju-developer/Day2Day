@@ -12,7 +12,7 @@ class GroupsBloc extends Bloc<GroupsEvent, GroupsState> {
   final GroupsRepository _groupsRepository;
 
   GroupsBloc({@required GroupsRepository groupsRepository})
-      : assert(_groupsRepository != null),
+      : assert(groupsRepository != null),
         _groupsRepository = groupsRepository;
 
   @override
@@ -20,18 +20,19 @@ class GroupsBloc extends Bloc<GroupsEvent, GroupsState> {
 
   @override
   Stream<GroupsState> mapEventToState(GroupsEvent event) async* {
-    if (event is FetchGroupsList) {
+    if (event is FetchGroups) {
       yield* _mapFetchedGroupsListToState();
     }
   }
 
   Stream<GroupsState> _mapFetchedGroupsListToState() async* {
     try {
-      await _groupsRepository.fetchGroupsList();
-      yield GetGroupsSuccess();
+      yield GetGroupsLoadInProgress();
+      await _groupsRepository.FetchGroups();
+      yield GetGroupsLoadSuccess();
     } catch (e) {
       print('Exception while fetching Groups list $e');
-      yield GetGroupsFailure();
+      yield GetGroupsLoadFailure();
     }
   }
 }

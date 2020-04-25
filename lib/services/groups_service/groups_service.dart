@@ -1,7 +1,14 @@
 import 'dart:async';
 
+import 'package:day2day/api/api.dart';
+import 'package:day2day/api/endpoints.dart';
+
 class GroupsRepository {
-  Future<void> fetchGroupsList() async {
-    return [];
+  final _api = API();
+  final _endpoints = Endpoints();
+
+  Future<Object> FetchGroups() async {
+    final response = await _api.apiCallForGet(_endpoints.getGroups);
+    return response;
   }
 }

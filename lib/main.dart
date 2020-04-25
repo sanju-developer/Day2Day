@@ -1,6 +1,8 @@
 import 'package:day2day/bloc_delegate.dart';
 import 'package:day2day/blocs/authentication/authentication_bloc.dart';
 import 'package:day2day/routes.dart';
+import 'package:day2day/screens/groups/bloc/groups_bloc.dart';
+import 'package:day2day/services/groups_service/groups_service.dart';
 import 'package:day2day/services/user.dart';
 
 import 'package:flutter/material.dart';
@@ -11,17 +13,26 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   BlocSupervisor.delegate = SimpleBlocDelegate();
   final UserRepository userRepository = UserRepository();
+  final GroupsRepository groupsRepository = GroupsRepository();
 
-  runApp(
-    BlocProvider(
-      create: (context) =>
-          AuthenticationBloc(userRepository: userRepository)..add(AppStarted()),
-      child: RepositoryProvider<UserRepository>(
-        create: (context) => userRepository,
-        child: MyApp(),
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(
+        create: (context) => AuthenticationBloc(userRepository: userRepository)
+          ..add(AppStarted()),
+        child: RepositoryProvider<UserRepository>(
+          create: (context) => userRepository,
+          child: MyApp(),
+        ),
       ),
-    ),
-  );
+      BlocProvider(
+        create: (context) => GroupsBloc(groupsRepository: groupsRepository),
+        child: RepositoryProvider<GroupsRepository>(
+            create: (BuildContext context) => groupsRepository),
+      ),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

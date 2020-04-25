@@ -1,6 +1,10 @@
+import 'package:day2day/screens/groups/bloc/groups_bloc.dart';
 import 'package:day2day/screens/groups/widgets/group_page_topbar.dart';
 import 'package:day2day/screens/groups/widgets/join_group_btn.dart';
 import 'package:day2day/widgets/drawer/drawer.dart';
+import 'package:day2day/services/groups_service/groups_service.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -10,6 +14,15 @@ class GroupsPage extends StatefulWidget {
 }
 
 class _GroupState extends State<GroupsPage> {
+  GroupsBloc _groupsBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _groupsBloc = GroupsBloc(groupsRepository: GroupsRepository());
+    _groupsBloc.add(FetchGroups());
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedDrawer(

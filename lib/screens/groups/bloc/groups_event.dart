@@ -7,4 +7,4 @@ abstract class GroupsEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchGroupsList extends GroupsEvent {}
+class FetchGroups extends GroupsEvent {}

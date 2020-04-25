@@ -9,8 +9,8 @@ abstract class GroupsState extends Equatable {
 
 class GetGroupsInitial extends GroupsState {}
 
-class GetGroupsProgress extends GroupsState {}
+class GetGroupsLoadInProgress extends GroupsState {}
 
-class GetGroupsSuccess extends GroupsState {}
+class GetGroupsLoadSuccess extends GroupsState {}
 
-class GetGroupsFailure extends GroupsState {}
+class GetGroupsLoadFailure extends GroupsState {}
