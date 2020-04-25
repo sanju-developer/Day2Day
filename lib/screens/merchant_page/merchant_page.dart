@@ -9,7 +9,6 @@ class MerchantPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: <Widget>[
           // The containers in the background
@@ -18,7 +17,7 @@ class MerchantPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(top: 50.0, left: 10.0, right: 20.0),
                 height: MediaQuery.of(context).size.height,
-                color: Theme.of(context).primaryColorLight,
+                color: Theme.of(context).accentColor,
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +68,7 @@ class MerchantPage extends StatelessWidget {
                             FlatButton(
                               onPressed: () => launch("tel:+91 9999262312"),
                               padding: EdgeInsets.all(0.0),
-                              color: Theme.of(context).primaryColorLight,
+                              color: Theme.of(context).accentColor,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
