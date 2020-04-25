@@ -28,7 +28,7 @@ class GroupsBloc extends Bloc<GroupsEvent, GroupsState> {
   Stream<GroupsState> _mapFetchedGroupsListToState() async* {
     try {
       yield GetGroupsLoadInProgress();
-      await _groupsRepository.FetchGroups();
+      await _groupsRepository.fetchGroups();
       yield GetGroupsLoadSuccess();
     } catch (e) {
       print('Exception while fetching Groups list $e');

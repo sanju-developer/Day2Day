@@ -7,7 +7,7 @@ class GroupsRepository {
   final _api = API();
   final _endpoints = Endpoints();
 
-  Future<Object> FetchGroups() async {
+  Future<Object> fetchGroups() async {
     final response = await _api.apiCallForGet(_endpoints.getGroups);
     return response;
   }
