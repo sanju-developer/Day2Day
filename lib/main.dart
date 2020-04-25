@@ -13,7 +13,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   BlocSupervisor.delegate = SimpleBlocDelegate();
   final UserRepository userRepository = UserRepository();
-  final GroupsRepository groupsRepository = GroupsRepository();
+  // final GroupsRepository groupsRepository = GroupsRepository();
 
   runApp(MultiBlocProvider(
     providers: [
@@ -25,11 +25,11 @@ void main() {
           child: MyApp(),
         ),
       ),
-      BlocProvider(
-        create: (context) => GroupsBloc(groupsRepository: groupsRepository),
-        child: RepositoryProvider<GroupsRepository>(
-            create: (BuildContext context) => groupsRepository),
-      ),
+      // BlocProvider(
+      //   create: (context) => GroupsBloc(groupsRepository: groupsRepository),
+      //   child: RepositoryProvider<GroupsRepository>(
+      //       create: (BuildContext context) => groupsRepository),
+      // ),
     ],
     child: MyApp(),
   ));

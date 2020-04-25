@@ -24,6 +24,12 @@ class _GroupState extends State<GroupsPage> {
   }
 
   @override
+  void dispose() {
+    _groupsBloc.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedDrawer(
       child: Scaffold(
