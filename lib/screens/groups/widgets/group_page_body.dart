@@ -22,12 +22,6 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
     _groupsBloc.add(FetchGroups());
   }
 
-  @override
-  void dispose() {
-    _groupsBloc.close();
-    super.dispose();
-  }
-
   List<Icon> _starsForRatings(_rating) {
     List<Icon> stars = [];
     for (int i = 0; i < _rating; i++) {
@@ -40,7 +34,7 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GroupsBloc(groupsRepository: groupsRepository),
+      create: (context) => _groupsBloc,
       child: Container(
         child: Column(
           children: [

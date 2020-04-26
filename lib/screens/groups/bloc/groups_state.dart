@@ -24,10 +24,10 @@ class GetGroupsSuccess extends GroupsState {
 class GetGroupsFailure extends GroupsState {}
 
 // State for single group details
-class GetSignleGroupsDetailsInitial extends GroupsState {}
+class GetSingleGroupsDetailsInitial extends GroupsState {}
 
-class GetSignleGroupsDetailsInProgress extends GroupsState {}
+class GetSingleGroupsDetailsInProgress extends GroupsState {}
 
-class GetSignleGroupsDetailsSuccess extends GroupsState {}
+class GetSingleGroupsDetailsSuccess extends GroupsState {}
 
-class GetSignleGroupsDetailsFailure extends GroupsState {}
+class GetSingleGroupsDetailsFailure extends GroupsState {}
