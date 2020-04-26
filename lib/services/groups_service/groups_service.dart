@@ -5,9 +5,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class GroupsRepository {
   final databaseReference = Firestore.instance;
 
-  Future<QuerySnapshot> fetchGroups() async {
-    final response =
+  Future<List<DocumentSnapshot>> fetchGroups() async {
+    final QuerySnapshot response =
         await databaseReference.collection("groups").getDocuments();
-    return response;
+    return response.documents;
   }
 }

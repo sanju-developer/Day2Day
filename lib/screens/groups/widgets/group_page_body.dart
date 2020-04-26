@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:day2day/routes.dart';
 import 'package:day2day/screens/groups/bloc/groups_bloc.dart';
@@ -53,9 +52,9 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
             ),
             Divider(thickness: 1),
             Expanded(
-              child: BlocListener<GroupsBloc, GroupsState>(
+              child: BlocBuilder<GroupsBloc, GroupsState>(
                 bloc: _groupsBloc,
-                listener: (context, state) {
+                builder: (BuildContext context, state) {
                   if (state is GetGroupsFailure) {
                     Scaffold.of(context).showSnackBar(
                       SnackBar(
@@ -65,16 +64,8 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                   } else if (state is GetGroupsInProgress) {
                     CircularProgressIndicator();
                   } else if (state is GetGroupsSuccess) {
-                    // return
-                    BlocProvider.of<GroupsBloc>(context);
-                  }
-                },
-                child: BlocBuilder<GroupsBloc, GroupsState>(
-                  bloc: _groupsBloc,
-                  builder: (BuildContext context, bloc) {
-                    print('snnnnnnnnnnnnnnnnapshot:::::$bloc');
                     return ListView.builder(
-                      itemCount: 10,
+                      itemCount: state.groups.length,
                       itemBuilder: (context, index) {
                         return Container(
                           padding: EdgeInsets.only(
@@ -86,7 +77,7 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                   context, Routes.MerchantPageRoute),
                               leading: FlutterLogo(size: 72.0),
                               title: Text(
-                                'Three-line ListTile',
+                                state.groups[index].data['name'],
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor),
@@ -103,8 +94,8 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                         );
                       },
                     );
-                  },
-                ),
+                  }
+                },
               ),
             ),
           ],
