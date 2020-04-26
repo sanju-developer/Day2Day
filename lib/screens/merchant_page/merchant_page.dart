@@ -17,7 +17,7 @@ class MerchantPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(top: 50.0, left: 10.0, right: 20.0),
                 height: MediaQuery.of(context).size.height,
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).buttonColor,
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +68,7 @@ class MerchantPage extends StatelessWidget {
                             FlatButton(
                               onPressed: () => launch("tel:+91 9999262312"),
                               padding: EdgeInsets.all(0.0),
-                              color: Theme.of(context).accentColor,
+                              // color: Theme.of(context).accentColor,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
@@ -143,7 +143,7 @@ class MerchantPage extends StatelessWidget {
                         Text(
                           'Joined Members:',
                           style: TextStyle(
-                              color: Theme.of(context).buttonColor,
+                              color: Color(0xff31222e),
                               fontSize: 24.0,
                               fontWeight: FontWeight.w800),
                         ),
@@ -167,7 +167,7 @@ class MerchantPage extends StatelessWidget {
                         Text(
                           'Rating:',
                           style: TextStyle(
-                              color: Theme.of(context).buttonColor,
+                              color: Color(0xff31222e),
                               fontSize: 24.0,
                               fontWeight: FontWeight.w800),
                         ),
@@ -196,7 +196,7 @@ class MerchantPage extends StatelessWidget {
                                 Text(
                                   'Other Groups:',
                                   style: TextStyle(
-                                      color: Theme.of(context).buttonColor,
+                                      color: Color(0xff31222e),
                                       fontSize: 24.0,
                                       fontWeight: FontWeight.w800),
                                 ),
