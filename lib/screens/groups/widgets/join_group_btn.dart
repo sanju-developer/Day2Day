@@ -1,65 +1,5 @@
-import 'package:day2day/routes.dart';
 import 'package:flutter/material.dart';
-
-class _BottomSheetContent extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Container(
-            height: 90,
-            padding: EdgeInsets.only(
-                top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
-            child: Center(
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Search group to join group',
-                  counterText: "",
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
-                ),
-              ),
-            ),
-          ),
-          Divider(thickness: 1),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  padding: EdgeInsets.only(
-                      top: 10.0, bottom: 5.0, left: 15.0, right: 15.0),
-                  child: Card(
-                    elevation: 8.0,
-                    child: ListTile(
-                      onTap: () => Navigator.pushNamed(
-                          context, Routes.MerchantPageRoute),
-                      leading: FlutterLogo(size: 72.0),
-                      title: Text(
-                        'Three-line ListTile',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(color: Theme.of(context).primaryColor),
-                      ),
-                      subtitle: Text(
-                          'A sufficiently long subtitle warrants three lines.'),
-                      trailing: Icon(
-                        Icons.verified_user,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      isThreeLine: true,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+import 'package:day2day/screens/groups/widgets/group_page_body.dart';
 
 class ModalBottomSheetDemo extends StatelessWidget {
   void _showModalBottomSheet(BuildContext context) {
@@ -68,7 +8,7 @@ class ModalBottomSheetDemo extends StatelessWidget {
       isScrollControlled: true,
       builder: (context) {
         return FractionallySizedBox(
-            heightFactor: 0.8, child: _BottomSheetContent());
+            heightFactor: 0.8, child: BottomSheetContent());
       },
     );
   }

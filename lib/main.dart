@@ -12,16 +12,19 @@ void main() {
   BlocSupervisor.delegate = SimpleBlocDelegate();
   final UserRepository userRepository = UserRepository();
 
-  runApp(
-    BlocProvider(
-      create: (context) =>
-          AuthenticationBloc(userRepository: userRepository)..add(AppStarted()),
-      child: RepositoryProvider<UserRepository>(
-        create: (context) => userRepository,
-        child: MyApp(),
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(
+        create: (context) => AuthenticationBloc(userRepository: userRepository)
+          ..add(AppStarted()),
+        child: RepositoryProvider<UserRepository>(
+          create: (context) => userRepository,
+          child: MyApp(),
+        ),
       ),
-    ),
-  );
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
