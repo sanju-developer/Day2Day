@@ -1,14 +1,13 @@
 import 'dart:async';
 
-import 'package:day2day/api/api.dart';
-import 'package:day2day/api/endpoints.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class GroupsRepository {
-  final _api = API();
-  final _endpoints = Endpoints();
+  final databaseReference = Firestore.instance;
 
-  Future<Object> fetchGroups() async {
-    final response = await _api.apiCallForGet(_endpoints.getGroups);
-    return response;
+  Future<List<DocumentSnapshot>> fetchGroups() async {
+    final QuerySnapshot response =
+        await databaseReference.collection("groups").getDocuments();
+    return response.documents;
   }
 }
