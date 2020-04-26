@@ -46,7 +46,7 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    labelText: 'Search group to join group',
+                    labelText: 'Search to join group...',
                     counterText: "",
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
