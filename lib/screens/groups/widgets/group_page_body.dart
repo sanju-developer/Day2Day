@@ -67,8 +67,16 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                     );
                   } else if (state is GetGroupsInProgress) {
                     return Center(
-                      child: CircularProgressIndicator(),
-                    );
+                        child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Fetching near by groups...'),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        CircularProgressIndicator(),
+                      ],
+                    ));
                   } else if (state is GetGroupsSuccess) {
                     return ListView.builder(
                       itemCount: state.groups.length,
@@ -181,6 +189,7 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                             state.groups[index].data['rating']),
                                       ),
                                       FloatingActionButton(
+                                        elevation: 16.0,
                                         mini: true,
                                         backgroundColor: Theme.of(context)
                                             .scaffoldBackgroundColor,
