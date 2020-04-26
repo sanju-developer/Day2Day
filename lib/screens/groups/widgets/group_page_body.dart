@@ -189,6 +189,7 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                             state.groups[index].data['rating']),
                                       ),
                                       FloatingActionButton(
+                                        elevation: 16.0,
                                         mini: true,
                                         backgroundColor: Theme.of(context)
                                             .scaffoldBackgroundColor,
