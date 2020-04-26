@@ -66,7 +66,9 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                       ),
                     );
                   } else if (state is GetGroupsInProgress) {
-                    CircularProgressIndicator();
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
                   } else if (state is GetGroupsSuccess) {
                     return ListView.builder(
                       itemCount: state.groups.length,
