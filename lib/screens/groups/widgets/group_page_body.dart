@@ -104,11 +104,33 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
                                           children: <Widget>[
-                                            FlutterLogo(size: 25.0),
                                             Container(
-                                              width: 250.0,
+                                              width: 40.0,
+                                              height: 40.0,
+                                              child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                  child: FadeInImage(
+                                                    image: NetworkImage(state
+                                                        .groups[index]
+                                                        .data['image']),
+                                                    placeholder: NetworkImage(
+                                                        'http://via.placeholder.com/40x40'),
+                                                  )),
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(50.0)),
+                                                border: Border.all(
+                                                  color: Colors.white,
+                                                  width: 3.0,
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 200.0,
                                               padding:
-                                                  EdgeInsets.only(left: 6.0),
+                                                  EdgeInsets.only(left: 8.0),
                                               child: Text(
                                                 state
                                                     .groups[index].data['name'],
