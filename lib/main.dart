@@ -17,13 +17,12 @@ void main() {
       BlocProvider(
         create: (context) => AuthenticationBloc(userRepository: userRepository)
           ..add(AppStarted()),
-        child: RepositoryProvider<UserRepository>(
-          create: (context) => userRepository,
-          child: MyApp(),
-        ),
       ),
     ],
-    child: MyApp(),
+    child: RepositoryProvider<UserRepository>(
+      create: (context) => userRepository,
+      child: MyApp(),
+    ),
   ));
 }
 
