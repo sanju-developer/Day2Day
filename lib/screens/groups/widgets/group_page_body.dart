@@ -144,22 +144,51 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                           ],
                                         ),
                                       ),
-                                      state.groups[index].data['verified']
-                                          ? Icon(
-                                              Icons.verified_user,
-                                              color: Colors.white,
-                                            )
-                                          : null,
+                                      PopupMenuButton(
+                                        color: Colors.white,
+                                        onSelected: (result) {},
+                                        itemBuilder: (BuildContext context) =>
+                                            <PopupMenuEntry>[
+                                          PopupMenuItem(
+                                            height: 20.0,
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: <Widget>[
+                                                Text('Join',
+                                                    style: TextStyle(
+                                                        color: Theme.of(context)
+                                                            .primaryColor,
+                                                        fontSize: 18.0,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                                Icon(
+                                                  Icons.check,
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      )
                                     ],
                                   ),
                                   SizedBox(height: 10.0),
-                                  Text(
-                                    state.groups[index].data['description'],
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 4,
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 14.0),
-                                  ),
+                                  state.groups[index].data['verified']
+                                      ? Row(
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.verified_user,
+                                              color: Colors.white,
+                                            ),
+                                            SizedBox(width: 8.0),
+                                            Text('Verified Merchant',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                )),
+                                          ],
+                                        )
+                                      : null,
                                   SizedBox(height: 10.0),
                                   Row(
                                     children: <Widget>[
@@ -202,6 +231,15 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                       ),
                                     ],
                                   ),
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    state.groups[index].data['description'],
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 4,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 14.0),
+                                  ),
+                                  SizedBox(height: 10.0),
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
