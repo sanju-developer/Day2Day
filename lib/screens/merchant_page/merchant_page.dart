@@ -1,3 +1,4 @@
+import 'package:day2day/widgets/popup_menu_btn/popup_menu_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -134,36 +135,7 @@ class MerchantPage extends StatelessWidget {
                                 size: 28.0,
                               ),
                             ),
-                            PopupMenuButton(
-                              icon: Icon(Icons.more_vert),
-                              elevation: 8.0,
-                              offset: Offset(0, 100),
-                              color: Colors.white,
-                              onSelected: (result) {},
-                              itemBuilder: (BuildContext context) =>
-                                  <PopupMenuEntry>[
-                                PopupMenuItem(
-                                  height: 15.0,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Text(
-                                        'Join',
-                                        style: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Icon(
-                                        Icons.check,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
+                            MerchantInfoButton()
                           ],
                         ),
                         Text(
