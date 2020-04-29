@@ -145,12 +145,13 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                         ),
                                       ),
                                       PopupMenuButton(
+                                        offset: Offset(0, 100),
                                         color: Colors.white,
                                         onSelected: (result) {},
                                         itemBuilder: (BuildContext context) =>
                                             <PopupMenuEntry>[
                                           PopupMenuItem(
-                                            height: 20.0,
+                                            height: 15.0,
                                             child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment
