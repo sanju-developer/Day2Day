@@ -156,16 +156,18 @@ class __BottomSheetContentState extends State<BottomSheetContent> {
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: <Widget>[
-                                                Text('Join',
-                                                    style: TextStyle(
-                                                        color: Theme.of(context)
-                                                            .primaryColor,
-                                                        fontSize: 18.0,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
+                                                Text(
+                                                  'Join',
+                                                  style: TextStyle(
+                                                      color: Theme.of(context)
+                                                          .primaryColor,
+                                                      fontSize: 18.0,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
                                                 Icon(
                                                   Icons.check,
-                                                )
+                                                ),
                                               ],
                                             ),
                                           ),

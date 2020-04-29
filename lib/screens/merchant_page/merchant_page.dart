@@ -189,20 +189,21 @@ class MerchantPage extends StatelessWidget {
                         ),
                         SizedBox(height: 20.0),
                         Container(
-                            padding: EdgeInsets.only(bottom: 20.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  'Other Groups:',
-                                  style: TextStyle(
-                                      color: Theme.of(context).buttonColor,
-                                      fontSize: 24.0,
-                                      fontWeight: FontWeight.w800),
-                                ),
-                                MerchantListCarousel(),
-                              ],
-                            ))
+                          padding: EdgeInsets.only(bottom: 20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Other Groups:',
+                                style: TextStyle(
+                                    color: Theme.of(context).buttonColor,
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.w800),
+                              ),
+                              MerchantListCarousel(),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
