@@ -1,6 +1,7 @@
 import 'package:day2day/bloc_delegate.dart';
 import 'package:day2day/blocs/authentication/authentication_bloc.dart';
 import 'package:day2day/routes.dart';
+import 'package:day2day/screens/my_group/my_group.dart';
 import 'package:day2day/services/user.dart';
 
 import 'package:flutter/material.dart';
