@@ -1,3 +1,4 @@
+import 'package:day2day/routes.dart';
 import 'package:day2day/screens/groups/widgets/group_page_topbar.dart';
 import 'package:day2day/screens/groups/widgets/join_group_btn.dart';
 import 'package:day2day/widgets/drawer/drawer.dart';
@@ -20,6 +21,12 @@ class _GroupState extends State<GroupsPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              RaisedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.MyGroupPageRoute);
+                },
+                child: Text('Goto my group details'),
+              ),
               SvgPicture.asset(
                 'lib/assets/images/no-group.svg',
                 semanticsLabel: 'Acme Logo',

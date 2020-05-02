@@ -16,7 +16,6 @@ class AccountChartState extends State {
     return AspectRatio(
       aspectRatio: 1.5,
       child: Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -54,7 +53,7 @@ class AccountChartState extends State {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Indicator(
-                  color: Color(0xfff95d6a),
+                  color: Color(0xff547D8F),
                   text: 'Monthly Cost',
                   isSquare: true,
                 ),
@@ -62,7 +61,7 @@ class AccountChartState extends State {
                   height: 4,
                 ),
                 Indicator(
-                  color: Color(0xfff8b250),
+                  color: Color(0xffF17527),
                   text: 'Cost/day',
                   isSquare: true,
                 ),
@@ -85,7 +84,7 @@ class AccountChartState extends State {
       switch (i) {
         case 0:
           return PieChartSectionData(
-            color: Color(0xfff95d6a),
+            color: Color(0xff547D8F),
             value: 450,
             title: '450 ₹',
             radius: radius,
@@ -96,9 +95,9 @@ class AccountChartState extends State {
           );
         case 1:
           return PieChartSectionData(
-            color: Color(0xfff8b250),
-            value: 30,
-            title: '30 ₹',
+            color: Color(0xffF17527),
+            value: 45,
+            title: '45 ₹',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,

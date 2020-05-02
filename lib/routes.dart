@@ -18,12 +18,17 @@ class Routes {
   static const String NotificationPageRoute = '/notification';
   static const String ProfilePageRoute = '/profile';
   static const String MerchantPageRoute = '/merchantPage';
+  static const String MyGroupPageRoute = '/myGroups';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case EntryPageRoute:
         return MaterialPageRoute(
-          // builder: (context) => EntryPage(),
+          builder: (context) => EntryPage(),
+        );
+
+      case MyGroupPageRoute:
+        return MaterialPageRoute(
           builder: (context) => MyGroup(),
         );
 

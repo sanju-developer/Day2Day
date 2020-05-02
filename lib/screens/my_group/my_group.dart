@@ -17,6 +17,7 @@ class _MyGroupState extends State<MyGroup> {
       body: Stack(
         children: <Widget>[
           Container(
+            color: Color(0xffF2E435),
             padding: EdgeInsets.only(
                 left: 16.0, right: 16.0, bottom: 16.0, top: 35.0),
             child: Column(
@@ -26,6 +27,8 @@ class _MyGroupState extends State<MyGroup> {
                 IconButton(
                   onPressed: () {
                     Navigator.pop(context);
+                    print(
+                        ('1111111111111111 ${MediaQuery.of(context).size.height}'));
                   },
                   icon: Icon(
                     Icons.arrow_back,
@@ -44,13 +47,15 @@ class _MyGroupState extends State<MyGroup> {
                 ),
                 Text(
                   'Details :',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30.0,
+                      color: Color(0xff547D8F)),
                 ),
                 Text(
                   '23 May 2020 Monday',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).primaryColor),
+                      fontWeight: FontWeight.bold, color: Color(0xff547D8F)),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +63,7 @@ class _MyGroupState extends State<MyGroup> {
                     Text(
                       'Delievered',
                       style: TextStyle(
-                          color: Theme.of(context).primaryColor,
+                          color: Color(0xff547D8F),
                           fontWeight: FontWeight.bold),
                     ),
                     Icon(
@@ -72,14 +77,17 @@ class _MyGroupState extends State<MyGroup> {
           ),
           SizedBox.expand(
             child: DraggableScrollableSheet(
-              initialChildSize: 0.25,
+              initialChildSize:
+                  ((MediaQuery.of(context).size.height - 500) / 1000 < 0.25
+                      ? 0.25
+                      : (MediaQuery.of(context).size.height - 500) / 1000),
               builder: (BuildContext context, myscrollController) {
                 return Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(32.0),
                         topRight: Radius.circular(32.0)),
-                    color: Theme.of(context).scaffoldBackgroundColor,
+                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey,
