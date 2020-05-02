@@ -169,7 +169,7 @@ class _MyGroupState extends State<MyGroup> {
                                     if (index == 0)
                                       Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.start,
+                                            MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
                                           Text(
                                             'History :',
@@ -177,8 +177,50 @@ class _MyGroupState extends State<MyGroup> {
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 30.0),
                                           ),
+                                          PopupMenuButton(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(15.0))),
+                                            icon: Icon(Icons.filter_list),
+                                            elevation: 8.0,
+                                            offset: Offset(0, 100),
+                                            color: Colors.white,
+                                            onSelected: (result) {},
+                                            itemBuilder:
+                                                (BuildContext context) =>
+                                                    <PopupMenuEntry>[
+                                              PopupMenuItem(
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: <Widget>[
+                                                    Text(
+                                                      'Date',
+                                                      style: TextStyle(
+                                                          color:
+                                                              Theme.of(context)
+                                                                  .primaryColor,
+                                                          fontSize: 18.0,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    IconButton(
+                                                      onPressed: () => {},
+                                                      icon: Icon(
+                                                        Icons.arrow_upward,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ],
                                       ),
+                                    SizedBox(
+                                      height: 20.0,
+                                    ),
                                     Text(
                                       '23 May 2020 Monday',
                                       style: TextStyle(
