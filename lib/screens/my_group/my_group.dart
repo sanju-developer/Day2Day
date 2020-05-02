@@ -115,11 +115,11 @@ class _MyGroupState extends State<MyGroup> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(50.0),
                                       child: FadeInImage(
-                                        width: 90.0,
-                                        height: 90.0,
+                                        width: 75.0,
+                                        height: 75.0,
                                         image: NetworkImage('null'),
                                         placeholder: NetworkImage(
-                                            'http://via.placeholder.com/90x90/fff'),
+                                            'http://via.placeholder.com/75x75/fff'),
                                       ),
                                     ),
                                   ),
@@ -136,11 +136,11 @@ class _MyGroupState extends State<MyGroup> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(50.0),
                                       child: FadeInImage(
-                                        width: 90.0,
-                                        height: 90.0,
+                                        width: 75.0,
+                                        height: 75.0,
                                         image: NetworkImage('null'),
                                         placeholder: NetworkImage(
-                                            'http://via.placeholder.com/90x90/fff'),
+                                            'http://via.placeholder.com/75x75/fff'),
                                       ),
                                     ),
                                   ),
@@ -150,8 +150,12 @@ class _MyGroupState extends State<MyGroup> {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
                       Expanded(
                         child: ListView.builder(
+                          padding: EdgeInsets.all(0),
                           controller: myscrollController,
                           itemCount: 5,
                           itemBuilder: (BuildContext context, int index) {
