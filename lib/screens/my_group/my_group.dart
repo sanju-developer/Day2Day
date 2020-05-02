@@ -87,10 +87,12 @@ class _MyGroupState extends State<MyGroup> {
                       Padding(
                           padding: EdgeInsets.only(
                               top: 30.0, right: 30.0, left: 30.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              ClipRRect(
+                          child: SingleChildScrollView(
+                            controller: myscrollController,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                ClipRRect(
                                   borderRadius: BorderRadius.circular(50.0),
                                   child: FadeInImage(
                                     width: 75.0,
@@ -98,18 +100,21 @@ class _MyGroupState extends State<MyGroup> {
                                     image: NetworkImage('null'),
                                     placeholder: NetworkImage(
                                         'http://via.placeholder.com/75x75'),
-                                  )),
-                              Icon(
-                                Icons.compare_arrows,
-                              ),
-                              ClipRRect(
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.compare_arrows,
+                                ),
+                                ClipRRect(
                                   borderRadius: BorderRadius.circular(50.0),
                                   child: FadeInImage(
                                     image: NetworkImage('null'),
                                     placeholder: NetworkImage(
                                         'http://via.placeholder.com/75x75'),
-                                  ))
-                            ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           )),
                       Expanded(
                         child: ListView.builder(
@@ -117,10 +122,11 @@ class _MyGroupState extends State<MyGroup> {
                           itemCount: 25,
                           itemBuilder: (BuildContext context, int index) {
                             return ListTile(
-                                title: Text(
-                              'Dish $index',
-                              style: TextStyle(color: Colors.black54),
-                            ));
+                              title: Text(
+                                'Dish $index',
+                                style: TextStyle(color: Colors.black54),
+                              ),
+                            );
                           },
                         ),
                       ),
