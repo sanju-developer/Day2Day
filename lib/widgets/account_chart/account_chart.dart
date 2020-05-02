@@ -86,7 +86,7 @@ class AccountChartState extends State {
           return PieChartSectionData(
             color: Color(0xff547D8F),
             value: 450,
-            title: '450 ₹',
+            title: '₹ 450',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -97,7 +97,7 @@ class AccountChartState extends State {
           return PieChartSectionData(
             color: Color(0xffF17527),
             value: 45,
-            title: '45 ₹',
+            title: '₹ 45',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
