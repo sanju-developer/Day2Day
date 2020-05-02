@@ -132,7 +132,7 @@ class MerchantPage extends StatelessWidget {
                               alignment: Alignment.topLeft,
                               onPressed: () => Navigator.pop(context),
                               icon: Icon(
-                                Icons.arrow_back,
+                                Icons.keyboard_backspace,
                                 size: 28.0,
                               ),
                             ),

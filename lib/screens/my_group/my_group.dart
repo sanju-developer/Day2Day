@@ -31,7 +31,8 @@ class _MyGroupState extends State<MyGroup> {
                         ('1111111111111111 ${MediaQuery.of(context).size.height}'));
                   },
                   icon: Icon(
-                    Icons.arrow_back,
+                    Icons.keyboard_backspace,
+                    color: Colors.white,
                     size: 30.0,
                   ),
                 ),

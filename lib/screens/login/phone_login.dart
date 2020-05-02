@@ -66,7 +66,7 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: Icon(Icons.keyboard_backspace),
                     onPressed: () => Navigator.pop(context),
                   ),
                   SizedBox(height: 40.0),
