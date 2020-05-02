@@ -27,8 +27,6 @@ class _MyGroupState extends State<MyGroup> {
                 IconButton(
                   onPressed: () {
                     Navigator.pop(context);
-                    print(
-                        ('1111111111111111 ${MediaQuery.of(context).size.height}'));
                   },
                   icon: Icon(
                     Icons.keyboard_backspace,
