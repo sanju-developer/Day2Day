@@ -41,7 +41,7 @@ class _GroupState extends State<GroupsPage> {
         //   ),
         // ),
         body: Container(
-          padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+          padding: EdgeInsets.only(top: 16.0, left: 25.0, right: 25.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,8 +63,8 @@ class _GroupState extends State<GroupsPage> {
                         width: 50.0,
                         height: 50.0,
                         image: NetworkImage('null'),
-                        placeholder: NetworkImage(
-                            'http://via.placeholder.com/50x50/fff'),
+                        placeholder:
+                            NetworkImage('https://placeimg.com/50/50/any'),
                       ),
                     ),
                   ),
@@ -96,6 +96,7 @@ class _GroupState extends State<GroupsPage> {
             ],
           ),
         ),
+        floatingActionButton: ModalBottomSheetDemo(false),
       ),
     );
   }

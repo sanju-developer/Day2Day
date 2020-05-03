@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LightThemeColors {
-  static const Color myCustomDarkBlueColor = const Color(0xff39447A);
+  static const Color myCustomDarkBlueColor =
+      const Color.fromRGBO(47, 75, 124, 1);
   static const Color myCustomLightBlueColor = const Color(0XFFCCDDEF);
   static const Color myCustomGreenColor = const Color(0xff19CC39A);
   static const Color myCustomLYellowColor = const Color(0XFFFFB931);
