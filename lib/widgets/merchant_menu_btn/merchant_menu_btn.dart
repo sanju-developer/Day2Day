@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:day2day/utils/phone_call.dart';
 import 'package:flutter/material.dart';
 

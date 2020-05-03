@@ -3,6 +3,7 @@ import 'package:day2day/screens/error/error.dart';
 import 'package:day2day/screens/groups/groups.dart';
 import 'package:day2day/screens/login/login.dart';
 import 'package:day2day/screens/login/phone_login.dart';
+import 'package:day2day/screens/my_group/my_group.dart';
 import 'package:day2day/screens/notification/notification.dart';
 import 'package:day2day/screens/profile/profile.dart';
 import 'package:day2day/widgets/size_route/scale_route.dart';
@@ -17,12 +18,18 @@ class Routes {
   static const String NotificationPageRoute = '/notification';
   static const String ProfilePageRoute = '/profile';
   static const String MerchantPageRoute = '/merchantPage';
+  static const String MyGroupPageRoute = '/myGroups';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case EntryPageRoute:
         return MaterialPageRoute(
           builder: (context) => EntryPage(),
+        );
+
+      case MyGroupPageRoute:
+        return MaterialPageRoute(
+          builder: (context) => MyGroup(),
         );
 
       case GroupsPageRoute:
