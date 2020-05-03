@@ -126,7 +126,7 @@ class _MyGroupState extends State<MyGroup> {
                                         height: 75.0,
                                         image: NetworkImage('null'),
                                         placeholder: NetworkImage(
-                                            'http://via.placeholder.com/75x75/fff'),
+                                            'https://placeimg.com/75/75/any'),
                                       ),
                                     ),
                                   ),
@@ -147,7 +147,7 @@ class _MyGroupState extends State<MyGroup> {
                                         height: 75.0,
                                         image: NetworkImage('null'),
                                         placeholder: NetworkImage(
-                                            'http://via.placeholder.com/75x75/fff'),
+                                            'https://placeimg.com/75/75/any'),
                                       ),
                                     ),
                                   ),

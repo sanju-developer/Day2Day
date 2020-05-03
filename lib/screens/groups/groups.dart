@@ -102,7 +102,7 @@ class _GroupState extends State<GroupsPage> {
 }
 
 class MyWidget1 extends StatelessWidget {
-  var index;
+  final index;
   MyWidget1(this.index);
 
   @override
@@ -180,45 +180,46 @@ class MyWidget1 extends StatelessWidget {
 class MyWidget2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Text(
-            'Today Status:',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-          ),
-          Text('23 May 2020, Sunday',
+    return ListView(
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            Text(
+              'Today Status:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            ),
+            Text('23 May 2020, Sunday',
+                style: TextStyle(
+                    color: Color(0xff2f4b7c), fontWeight: FontWeight.bold)),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Text(
+              'Delievered',
               style: TextStyle(
-                  color: Color(0xff2f4b7c), fontWeight: FontWeight.bold)),
-          Row(
-            children: <Widget>[
-              Text(
-                'Delievered',
-                style: TextStyle(
-                    color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
-              ),
-              SizedBox(width: 10.0),
-              Icon(Icons.done_all, color: Color(0xff2f4b7c))
-            ],
-          ),
-          Expanded(
-              child: Row(
-            children: <Widget>[
-              Text(
-                'Total Price',
-                style: TextStyle(
-                    color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
-              ),
-              SizedBox(width: 10.0),
-              Text(
-                '₹ 45',
-                style: TextStyle(
-                    color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
-              )
-            ],
-          ))
-        ],
-      ),
+                  color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
+            ),
+            SizedBox(width: 10.0),
+            Icon(Icons.done_all, color: Color(0xff2f4b7c))
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Text(
+              'Total Price',
+              style: TextStyle(
+                  color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
+            ),
+            SizedBox(width: 10.0),
+            Text(
+              '₹ 45',
+              style: TextStyle(
+                  color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
+      ],
     );
   }
 }
