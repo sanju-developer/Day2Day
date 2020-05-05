@@ -5,7 +5,6 @@ import 'package:day2day/widgets/date_range_picker/date_range_picker.dart';
 import 'package:day2day/widgets/drawer/drawer.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:slimy_card/slimy_card.dart';
 
 class GroupsPage extends StatefulWidget {
@@ -87,7 +86,7 @@ class _GroupState extends State<GroupsPage> {
                         bottomCardHeight: 150,
                         borderRadius: 15,
                         topCardWidget: MyWidget1(index),
-                        bottomCardWidget: MyWidget2(),
+                        bottomCardWidget: MyWidget2(index),
                         slimeEnabled: true,
                       ),
                     );
@@ -213,6 +212,8 @@ class MyWidget1 extends StatelessWidget {
 }
 
 class MyWidget2 extends StatelessWidget {
+  final index;
+  MyWidget2(this.index);
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -225,7 +226,10 @@ class MyWidget2 extends StatelessWidget {
             ),
             Text('23 May 2020, Sunday',
                 style: TextStyle(
-                    color: Color(0xff2f4b7c), fontWeight: FontWeight.bold)),
+                    color: index % 2 == 0
+                        ? Color.fromRGBO(249, 93, 106, 1)
+                        : Color.fromRGBO(47, 75, 124, 1),
+                    fontWeight: FontWeight.bold)),
           ],
         ),
         Row(
@@ -233,10 +237,18 @@ class MyWidget2 extends StatelessWidget {
             Text(
               'Delievered',
               style: TextStyle(
-                  color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
+                  color: index % 2 == 0
+                      ? Color.fromRGBO(249, 93, 106, 1)
+                      : Color.fromRGBO(47, 75, 124, 1),
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(width: 10.0),
-            Icon(Icons.done_all, color: Color(0xff2f4b7c))
+            Icon(
+              Icons.done_all,
+              color: index % 2 == 0
+                  ? Color.fromRGBO(249, 93, 106, 1)
+                  : Color.fromRGBO(47, 75, 124, 1),
+            )
           ],
         ),
         Row(
@@ -244,13 +256,19 @@ class MyWidget2 extends StatelessWidget {
             Text(
               'Total Price',
               style: TextStyle(
-                  color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
+                  color: index % 2 == 0
+                      ? Color.fromRGBO(249, 93, 106, 1)
+                      : Color.fromRGBO(47, 75, 124, 1),
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(width: 10.0),
             Text(
               '₹ 45',
               style: TextStyle(
-                  color: Color(0xff2f4b7c), fontWeight: FontWeight.bold),
+                  color: index % 2 == 0
+                      ? Color.fromRGBO(249, 93, 106, 1)
+                      : Color.fromRGBO(47, 75, 124, 1),
+                  fontWeight: FontWeight.bold),
             )
           ],
         ),
