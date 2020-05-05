@@ -54,7 +54,7 @@ class ModalBottomSheetDemo extends StatelessWidget {
                 elevation: 16.0,
                 onPressed: () => _showModalBottomSheet(context),
                 child: Icon(
-                  Icons.search,
+                  Icons.add,
                   color: Colors.white,
                 ),
                 backgroundColor: Theme.of(context).primaryColor),

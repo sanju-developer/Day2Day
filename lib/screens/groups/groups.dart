@@ -1,6 +1,7 @@
 import 'package:day2day/routes.dart';
 import 'package:day2day/screens/groups/widgets/group_page_topbar.dart';
 import 'package:day2day/screens/groups/widgets/join_group_btn.dart';
+import 'package:day2day/widgets/date_range_picker/date_range_picker.dart';
 import 'package:day2day/widgets/drawer/drawer.dart';
 
 import 'package:flutter/material.dart';
@@ -120,6 +121,45 @@ class MyWidget1 extends StatelessWidget {
                 'Milk Booth ',
                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               ),
+              PopupMenuButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                icon: Icon(Icons.more_vert),
+                elevation: 8.0,
+                offset: Offset(0, 100),
+                color: Colors.white,
+                onSelected: (result) {},
+                itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                  PopupMenuItem(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                            'Pause ordering.',
+                            style: TextStyle(
+                                fontSize: 17.0, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        DateRangePicker()
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Text(
+                'Vivek Rajoriya',
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                width: 15.0,
+              ),
               Icon(
                 Icons.verified_user,
                 color: index % 2 == 0
@@ -127,12 +167,6 @@ class MyWidget1 extends StatelessWidget {
                     : Color.fromRGBO(47, 75, 124, 1),
               )
             ],
-          ),
-          Text(
-            'Vivek Rajoriya',
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
-            style: TextStyle(fontWeight: FontWeight.bold),
           ),
           Text(
             '+91 9999262312',
