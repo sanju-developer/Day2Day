@@ -39,3 +39,6 @@ lib/generated_plugin_registrant.dart
 
 # Secret files
 android/app/*.json
+
+# Chopper source gen files
+*.chopper.dart
