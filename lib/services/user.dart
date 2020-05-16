@@ -2,19 +2,26 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:day2day/api/client.dart';
 import 'package:day2day/api/login/login_service.dart';
+import 'package:day2day/services/local_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class UserRepository {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final LocalStorageRepository _localStorageRepository;
 
   String _verificationId;
   int _forceResendingToken;
 
-  UserRepository({FirebaseAuth firebaseAuth, GoogleSignIn googleSignin})
-      : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-        _googleSignIn = googleSignin ?? GoogleSignIn();
+  UserRepository({
+    FirebaseAuth firebaseAuth,
+    GoogleSignIn googleSignin,
+    LocalStorageRepository localStorageRepository,
+  })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
+        _googleSignIn = googleSignin ?? GoogleSignIn(),
+        _localStorageRepository =
+            localStorageRepository ?? LocalStorageRepository();
 
   Future<FirebaseUser> signInWithGoogle() async {
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
@@ -45,7 +52,8 @@ class UserRepository {
 
   Future<bool> isSignedIn() async {
     final currentUser = await _firebaseAuth.currentUser();
-    return currentUser != null;
+    String token = await _localStorageRepository.getAccessToken();
+    return (currentUser != null && token != null);
   }
 
   Future<String> getUser() async {
@@ -97,9 +105,8 @@ class UserRepository {
     );
     if (response.statusCode == 201 || response.statusCode == 200) {
       final String accessToken = response.body['access'];
-      // save access token to storage
+      await _localStorageRepository.setAccessToken(accessToken);
     } else {
-      print(response.body);
       final error = json.decode(response.error);
       throw Exception(error['idToken']);
     }
