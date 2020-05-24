@@ -1,17 +1,27 @@
 import 'dart:async';
+import 'dart:convert';
+import 'package:day2day/api/client.dart';
+import 'package:day2day/api/login/login_service.dart';
+import 'package:day2day/services/local_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class UserRepository {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final LocalStorageRepository _localStorageRepository;
 
   String _verificationId;
   int _forceResendingToken;
 
-  UserRepository({FirebaseAuth firebaseAuth, GoogleSignIn googleSignin})
-      : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-        _googleSignIn = googleSignin ?? GoogleSignIn();
+  UserRepository({
+    FirebaseAuth firebaseAuth,
+    GoogleSignIn googleSignin,
+    LocalStorageRepository localStorageRepository,
+  })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
+        _googleSignIn = googleSignin ?? GoogleSignIn(),
+        _localStorageRepository =
+            localStorageRepository ?? LocalStorageRepository();
 
   Future<FirebaseUser> signInWithGoogle() async {
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
@@ -21,8 +31,9 @@ class UserRepository {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-    await _firebaseAuth.signInWithCredential(credential);
-    return _firebaseAuth.currentUser();
+    AuthResult result = await _firebaseAuth.signInWithCredential(credential);
+    await backendLogin(result.user);
+    return result.user;
   }
 
   Future<void> signInWithCredentials(String email, String password) {
@@ -41,7 +52,8 @@ class UserRepository {
 
   Future<bool> isSignedIn() async {
     final currentUser = await _firebaseAuth.currentUser();
-    return currentUser != null;
+    String token = await _localStorageRepository.getAccessToken();
+    return (currentUser != null && token != null);
   }
 
   Future<String> getUser() async {
@@ -81,6 +93,22 @@ class UserRepository {
         verificationId: this._verificationId, smsCode: otpCode);
     AuthResult result =
         await _firebaseAuth.signInWithCredential(_authCredential);
+    await backendLogin(result.user);
     return result.user;
+  }
+
+  Future<void> backendLogin(FirebaseUser user) async {
+    LoginService loginService = apiClient.getService<LoginService>();
+    final tokenResult = await user.getIdToken();
+    final response = await loginService.userLogin(
+      {'idToken': tokenResult.token},
+    );
+    if (response.statusCode == 201 || response.statusCode == 200) {
+      final String accessToken = response.body['access'];
+      await _localStorageRepository.setAccessToken(accessToken);
+    } else {
+      final error = json.decode(response.error);
+      throw Exception(error['idToken']);
+    }
   }
 }
